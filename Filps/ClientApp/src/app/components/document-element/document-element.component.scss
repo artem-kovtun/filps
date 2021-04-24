@@ -1,0 +1,84 @@
+[container] {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px 15px 5px;
+  margin: 5px 2%;
+  border-radius: 2px;
+  border: 1px solid #efefef;
+  background-color: #fbfbfb;
+  width: 96%;
+}
+
+[content] {
+  margin: 0 2%;
+  width: 96%;
+}
+
+[header-actions] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.edit-container:hover [hover-button] {
+  display: block;
+}
+
+[hover-button] {
+  display: none;
+}
+
+[header-actions] i {
+  margin-left: 5px;
+}
+
+[dd-button] {
+  cursor: grab;
+  padding: 7px;
+  margin-right: 10px;
+}
+
+[menu-actions] {
+  padding: 0 10px;
+}
+
+[action-button] {
+  margin-right: 10px;
+  padding: 5px 7px;
+  border-radius: 2px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+[action-button]:last-child {
+  margin-right: 0;
+}
+
+[action-button] i {
+  margin-right: 5px;
+}
+
+[action-button]:hover {
+  background-color: #f6f6f6;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

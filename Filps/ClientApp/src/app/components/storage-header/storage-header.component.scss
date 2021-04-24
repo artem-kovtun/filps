@@ -1,0 +1,41 @@
+[back-icon] {
+  margin-right: 20px;
+}
+
+[tab-header] {
+  margin-bottom: 20px;
+  height: 26px;
+  justify-content: space-between;
+}
+
+[breadcrumb] {
+  margin-bottom: 3px;
+}
+
+[tab-header-actions] i {
+  margin-right: 5px;
+}
+
+[tab-header-actions] i:last-child {
+  margin-right: 0;
+}
+
+[sync-container] {
+  margin: 0 10px;
+}
+
+[sync-label] {
+  color: #003d9e;
+  margin-right: 10px;
+}
+
+[search-container] {
+  margin-right: 5px;
+}
+
+[search-input] {
+  border: none;
+  border-bottom: 1px solid #ececec;
+  margin-right: 5px;
+  padding: 1px 0;
+}

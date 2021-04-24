@@ -1,0 +1,90 @@
+[container] {
+  width: 100%;
+}
+
+[actions-header] {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+[action] {
+  margin-right: 15px;
+}
+
+[action]:last-child {
+  margin-right: 0;
+}
+
+[text-input] {
+  width: 100%;
+  line-height: 25px;
+  padding: 12px 0;
+  border-top: 1px solid #d9d9d9;
+}
+
+[options-table] {
+  margin-top: 15px;
+  padding: 10px
+}
+
+[index-column] {
+  width: 4%;
+}
+
+[value-column] {
+  width: 24%;
+}
+
+tr {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+td {
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 5px 10px;
+}
+
+[table-input] {
+  border: none;
+  background-color: white;
+  width: 100%;
+}
+
+[table-input]::placeholder {
+  color: #d9d9d9;
+}
+
+[input-placeholder] {
+  background-color: #eeeeee;
+}
+
+[fill-missing-button] {
+  margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  width: fit-content;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+
+[type-icon] {
+  margin: 0 10px 0 5px;
+}
+
+[fill-missing-button-actions] {
+  border-left: 1px solid #d9d9d9;
+  padding: 0 5px;
+}
+
+[fill-missing-button-actions] i {
+  cursor: pointer;
+  color: #d9d9d9;
+  margin: 0 5px;
+}
+
+[fill-missing-button-actions] i:hover {
+  color: #000;
+}

@@ -1,0 +1,8 @@
+<iframe #frame *ngIf="view == View.Read" frame [src]="embedLink" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div *ngIf="view == View.Edit" link-container>
+  <div flex>
+    <i youtube-icon nz-icon nzType="youtube" nzTheme="outline"></i>
+    <span label>Provide YouTube video link</span>
+  </div>
+  <input link-input primary-input [(ngModel)]="this.youtubeEmbedded.link" placeholder="Type link here..." (ngModelChange)="buildEmbedLink()">
+</div>

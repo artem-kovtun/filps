@@ -1,0 +1,55 @@
+<div container>
+  <div actions-header>
+    <button action cailms-text-button>
+      <span cailms-button-image class="material-icons">toc</span>
+      <span (click)="log()">Select</span>
+    </button>
+    <button action cailms-text-button>
+      <span cailms-button-image class="material-icons">mode</span>
+      <span (click)="insert(FillMissingTypeEnum.Input)">Input</span>
+    </button>
+  </div>
+
+  <div (click)="getSelection()" (input)="fillMissing.text=$event.target.textContent" contenteditable="true" text-input>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit </span>.
+    <span>
+      <div contenteditable="false" fill-missing-button>
+        <span type-icon cailms-button-image class="material-icons">mode</span>
+        <div flex fill-missing-button-actions>
+          <i nz-icon nzType="info-circle" nzTheme="outline"></i>
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </div>
+      </div>
+    </span>
+    <span>amet consequatur facere fuga iusto libero magni, mollitia neque, non nostrum numquam officiis praesentium quo rem sapiente sint veniam vitae voluptatum?</span>
+  </div>
+
+  <table options-table style="width:100%">
+    <tr>
+      <th index-column></th>
+      <th value-column></th>
+      <th value-column></th>
+      <th value-column></th>
+      <th value-column></th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+      <td><input table-input type="text" placeholder="Option..."></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td colspan="4" input-placeholder></td>
+    </tr>
+  </table>
+
+</div>

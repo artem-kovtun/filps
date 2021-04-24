@@ -1,0 +1,43 @@
+<div flex-column>
+  <span label>Filename</span>
+  <input file-name-input primary-input type="text">
+
+  <span label>Location</span>
+  <nz-radio-group flex [(ngModel)]="storage" nzButtonStyle="solid">
+    <label nz-radio-button [nzValue]="Storage.Filps">
+      <span>Filps</span>
+    </label>
+    <label storage-label-container nz-radio-button [nzValue]="Storage.GoogleDrive">
+      <div flex storage-label>
+        <img storage-icon src="./assets/images/google-drive.svg">
+        <span>Google Drive</span>
+      </div>
+    </label>
+    <label storage-label-container nz-radio-button [nzValue]="Storage.OneDrive">
+      <div flex storage-label>
+        <img storage-icon src="./assets/images/onedrive.svg">
+        <span>OneDrive</span>
+      </div>
+    </label>
+    <label storage-label-container nz-radio-button [nzValue]="Storage.Dropbox">
+      <div flex storage-label>
+        <img storage-icon src="./assets/images/dropbox.svg">
+        <span>Dropbox</span>
+      </div>
+    </label>
+  </nz-radio-group>
+
+  <app-storage storage *ngIf="this.storage == Storage.GoogleDrive" [storage]="Storage.GoogleDrive" [isAuthorized]="true"></app-storage>
+  <app-storage storage *ngIf="this.storage == Storage.OneDrive" [storage]="Storage.OneDrive" [isAuthorized]="false"></app-storage>
+
+  <div actions>
+    <button (click)="cancelSelect()" secondary-button cancel-edit-button button-danger>
+      <i button-icon nz-icon nzType="close" nzTheme="outline" ></i>
+      <span>{{ 'cancel' | translate}}</span>
+    </button>
+    <button (click)="selected()" primary-button>
+      <i button-icon nz-icon nzType="check" nzTheme="outline" ></i>
+      <span>{{ 'save' | translate}}</span>
+    </button>
+  </div>
+</div>

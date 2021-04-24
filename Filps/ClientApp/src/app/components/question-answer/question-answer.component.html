@@ -1,0 +1,9 @@
+<div *ngIf="view == View.Read" container>
+  <span question>{{questionAnswer.text}}</span>
+  <textarea (ngModelChange)="onDataChange()" primary-input [(ngModel)]="questionAnswer.answer" [nzAutosize]="{ minRows: 1, maxRows: 100 }"></textarea>
+</div>
+
+<div *ngIf="view == View.Edit" container>
+  <span question-label no-select>{{ 'question' | translate}}</span>
+  <input primary-input [(ngModel)]="questionAnswer.text">
+</div>

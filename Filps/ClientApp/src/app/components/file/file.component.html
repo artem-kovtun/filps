@@ -1,0 +1,20 @@
+<div cdkDropList file (cdkDropListDropped)="drop($event)">
+
+  <div [class.read-file-element]="view == View.Read" *ngFor="let fileElement of fileContent; index as i" [ngSwitch]="fileElement.type">
+    <app-document-element [index]="i" (onDelete)="deleteFileElement($event)" (onCopy)="copyFileElement($event)" (onAddAfter)="addAfterElement($event)" [view]="view">
+      <app-question-answer *ngSwitchCase="FileElementType.QuestionAnswer" [view]="view" [(questionAnswer)]="fileElement.model"></app-question-answer>
+      <app-question-options *ngSwitchCase="FileElementType.QuestionOptions" [view]="view" [(questionOptions)]="fileElement.model"></app-question-options>
+      <app-text *ngSwitchCase="FileElementType.Text" [view]="view" [text]="fileElement.model"></app-text>
+      <app-images-collage *ngSwitchCase="FileElementType.ImagesCollage"  [images]="fileElement.model"></app-images-collage>
+      <app-heading *ngSwitchCase="FileElementType.Heading" [view]="view" [heading]="fileElement.model"></app-heading>
+      <app-youtube-embedded *ngSwitchCase="FileElementType.YoutubeLink" [view]="view" [youtubeEmbedded]="fileElement.model"></app-youtube-embedded>
+      <app-fill-missing *ngSwitchCase="FileElementType.FillMissing" [fillMissing]="fileElement.model"></app-fill-missing>
+      <app-audio-player *ngSwitchCase="FileElementType.Audio" [view]="view" [audioRecord]="fileElement.model" ></app-audio-player>
+    </app-document-element>
+  </div>
+
+  <div (click)="addSection()" add-section-button *ngIf="view == View.Edit">
+    <i nz-icon nzType="appstore-add" nzTheme="outline"></i>
+    <span>{{ 'add' | translate}}</span>
+  </div>
+</div>

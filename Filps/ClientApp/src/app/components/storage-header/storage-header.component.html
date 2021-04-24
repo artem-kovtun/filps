@@ -1,0 +1,24 @@
+<div flex tab-header>
+  <div flex  no-select>
+    <i (click)="back()" back-icon *ngIf="isBackButtonVisible()" nz-icon icon-button nzType="arrow-left" nzTheme="outline" [nzTooltipTitle]="'back' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1"></i>
+    <nz-breadcrumb breadcrumb>
+      <nz-breadcrumb-item>
+        <i nz-icon nzType="home"></i>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item *ngFor="let folder of breadcrumb">
+        <span>{{folder.name}}</span>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div flex tab-header-actions>
+    <div *ngIf="isSearching" flex search-container>
+      <input #searchElement [formControl]="search" [placeholder]="('search' | translate) + '...'" search-input type="text" [(ngModel)]="searchQuery">
+      <i (click)="hideSearch()" icon-button nz-icon nzType="close" nzTheme="outline" [nzTooltipTitle]="'close' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1"></i>
+    </div>
+    <i *ngIf="!isSearching" (click)="showSearch()" icon-button nz-icon nzType="search" nzTheme="outline" [nzTooltipTitle]="'search' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1"></i>
+    <i (click)="sync()" icon-button nz-icon nzType="sync" nzTheme="outline" [nzTooltipTitle]="'sync' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1"></i>
+    <i icon-button nz-icon nzType="logout" nzTheme="outline" [nzTooltipTitle]="'logout' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1"></i>
+  </div>
+</div>
+
+<ng-template #indicatorTemplate><i nz-icon nzType="loading"></i></ng-template>

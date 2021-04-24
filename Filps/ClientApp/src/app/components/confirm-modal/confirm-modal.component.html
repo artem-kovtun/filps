@@ -1,0 +1,12 @@
+<span message>{{this.model.message}}</span>
+<div actions>
+  <button secondary-button (click)="onCancel()">
+    <span>{{this.model.cancelMessage}}</span>
+  </button>
+  <button *ngIf="model.type == ConfirmModelType.Danger" primary-danger-button (click)="onConfirm()">
+    <span>{{this.model.confirmMessage}}</span>
+  </button>
+  <button *ngIf="model.type == ConfirmModelType.Primary" primary-button (click)="onConfirm()">
+    <span>{{this.model.confirmMessage}}</span>
+  </button>
+</div>

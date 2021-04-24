@@ -1,0 +1,7 @@
+<nz-carousel container>
+  <div nz-carousel-content *ngFor="let imageUrl of images.urls; index as i">
+    <div>
+      <img image [src]="imageUrl" alt="image">
+    </div>
+  </div>
+</nz-carousel>

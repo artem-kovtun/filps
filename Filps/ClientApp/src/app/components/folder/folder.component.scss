@@ -1,0 +1,24 @@
+[folder] {
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+[folder-content] {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+[folder-name] {
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+[folder-name]:hover {
+  color: #003d9e;
+}
+
+[folder-icon] {
+  margin-right: 10px;
+}

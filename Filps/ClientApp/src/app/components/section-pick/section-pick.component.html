@@ -1,0 +1,8 @@
+<ul nz-list [nzBordered]="false" [nzDataSource]="sections" nzSize="large">
+  <li nz-list-item *ngFor="let section of sections" nzNoFlex>
+    <div flex (click)="selected(section.value)" section-pick-button>
+      <img section-image [src]="'./assets/images/' + section.image + '.svg'" alt="">
+      <span section-name>{{ section.name }}</span>
+    </div>
+  </li>
+</ul>

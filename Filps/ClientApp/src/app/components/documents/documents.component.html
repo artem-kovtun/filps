@@ -1,0 +1,21 @@
+<div documents>
+  <div *ngFor="let file of files" document>
+    <div flex>
+      <img *ngIf="file.source == Storage.GoogleDrive" document-source-icon src="./assets/images/google-drive.svg" alt="">
+      <img *ngIf="file.source == Storage.OneDrive" document-source-icon src="./assets/images/onedrive.svg" alt="">
+      <img *ngIf="file.source == Storage.Dropbox" document-source-icon src="./assets/images/dropbox.svg" alt="">
+      <span (click)="onFileClick(file.id)" document-name>{{file.name}}</span>
+    </div>
+    <div flex>
+      <div *ngIf="allowPin" flex document-actions>
+        <button *ngIf="file.isPinned" unpin-button icon-button [nzTooltipTitle]="'unpin' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1">
+          <img src="./assets/images/star-filled.svg" alt="">
+        </button>
+        <button *ngIf="!file.isPinned" icon-button [nzTooltipTitle]="'pin' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1">
+          <img src="./assets/images/star-border.svg" alt="">
+        </button>
+      </div>
+      <span *ngIf="displayDate" last-modified-date no-select>{{file.createdOn | date: 'mediumDate'}}</span>
+    </div>
+  </div>
+</div>

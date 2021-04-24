@@ -1,0 +1,6 @@
+<div *ngIf="view == View.Read">
+  <quill-editor [(ngModel)]="text.content" [modules] = "{ toolbar: false }" [readOnly]="true"></quill-editor>
+</div>
+<div container *ngIf="view == View.Edit">
+  <quill-editor placeholder="" [(ngModel)]="text.content"></quill-editor>
+</div>

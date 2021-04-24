@@ -1,0 +1,15 @@
+<div no-files-container>
+  <div no-files>
+    <svg *ngIf="storage === Storage.GoogleDrive" no-files-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M113.47 309.408L95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z" fill="#fbbb00"/><path d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z" fill="#518ef8"/><path d="M416.253 455.624l.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z" fill="#28b446"/><path d="M419.404 58.936l-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.411-68.276C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z" fill="#f14336"/></svg>
+    <svg *ngIf="storage === Storage.OneDrive" no-files-icon xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#4CAF50;" d="M272,240h240V16c0-8.832-7.168-16-16-16H272V240z"/><path style="fill:#F44336;" d="M240,240V0H16C7.168,0,0,7.168,0,16v224H240z"/><path style="fill:#2196F3;" d="M240,272H0v224c0,8.832,7.168,16,16,16h224V272z"/><path style="fill:#FFC107;" d="M272,272v240h224c8.832,0,16-7.168,16-16V272H272z"/></svg>
+    <svg *ngIf="storage === Storage.Dropbox" no-files-icon enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><g fill="#1976d2"><path d="m11.999 4.483 7.119 4.246 4.882-3.775-7.061-4.454z"/><path d="m12 4.485-4.94-3.985-7.06 4.453 4.883 3.777z"/><path d="m12 12.976 4.939 3.983 7.061-4.453-4.883-3.777-7.117 4.246-7.119-4.246-4.881 3.777 7.06 4.453z"/><path d="m19.501 19.187v-2.125l-2.204 1.39v.001c-.828.527-1.205-.536-5.296-3.602-4.161 3.128-4.473 4.12-5.298 3.601l-2.202-1.389v2.124l7.515 4.313z"/></g></svg>
+
+    <span auth-label no-select>{{'storageAuthorizeLabel' | translate }}</span>
+    <span auth-label-secondary no-select>{{'storageAuthorizeDescription' | translate }}</span>
+    <button (click)="authorizeClick()" auth-source-button primary-button>
+      <i button-icon nz-icon [nzType]="drive.icon" nzTheme="outline"></i>
+      <span class="no-select">{{'storageAuthorizeButton' | translate }} {{drive.provider}}</span>
+    </button>
+    <label no-select auth-checkbox nz-checkbox [(ngModel)]="isLoginToApplication">{{'loginToTheApplication' | translate }}</label>
+  </div>
+</div>

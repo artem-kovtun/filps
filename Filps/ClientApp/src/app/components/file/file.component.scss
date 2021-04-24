@@ -1,0 +1,40 @@
+[file] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  margin-bottom: 25px;
+  padding: 25px 0;
+}
+
+.read-file-element {
+  margin-bottom: 25px;
+}
+
+.read-file-element:last-child {
+  margin-bottom: 0;
+}
+
+[add-section-button] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+  margin: 15px 2%;
+  padding: 10px 0;
+  border-radius: 2px;
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: silver;
+}
+
+[add-section-button]:hover {
+  background-color: #f5f5f5;
+  color: #000
+}
+
+[add-section-button] i {
+  margin-right: 5px;
+}

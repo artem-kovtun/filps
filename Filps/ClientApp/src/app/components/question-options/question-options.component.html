@@ -1,0 +1,42 @@
+<div *ngIf="view == View.Read" container>
+  <span question>{{questionOptions.text}}</span>
+  <div *ngIf="questionOptions.isMultipleCorrect; then multipleCorrectOptions else singleCorrectOption"></div>
+</div>
+
+<div *ngIf="view == View.Edit" container>
+  <span question-label>{{ 'question' | translate}}</span>
+  <input primary-input [(ngModel)]="questionOptions.text">
+  <div answers-editor>
+    <div answers-editor-header>
+      <span answers-label></span>
+      <div flex>
+        <div flex multiple-correct-toggle>
+          <nz-switch [(ngModel)]="questionOptions.isMultipleCorrect" nzSize="small">Multiple correct</nz-switch>
+          <span>{{ 'multipleCorrect' | translate }}</span>
+        </div>
+        <button primary-button (click)="addOption()">
+          <i button-icon nz-icon nzType="plus" nzTheme="outline"></i>
+          <span>{{ 'addOption' | translate }}</span>
+        </button>
+      </div>
+    </div>
+    <div *ngFor="let option of questionOptions.options; index as i" answer-option-editor>
+      <input primary-input option-input [placeholder]="('option' | translate) + '...'" [(ngModel)]="option.text">
+      <i nz-icon nzType="close" nzTheme="outline" [nzTooltipMouseEnterDelay]="1" [nzTooltipTitle]="'delete' | translate" nzTooltipPlacement="right" nz-tooltip icon-button remove-option-button (click)="deleteOption(i)"></i>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #singleCorrectOption>
+  <nz-radio-group options [(ngModel)]="questionOptions.selectedOptions" (ngModelChange)="onDataChange()">
+    <label *ngFor="let option of questionOptions.options" nz-radio [nzValue]="option.text">{{option.text}}</label>
+  </nz-radio-group>
+</ng-template>
+<ng-template #multipleCorrectOptions>
+  <nz-checkbox-wrapper (nzOnChange)="saveSelectedOptions($event)">
+    <div *ngFor="let option of questionOptions.options">
+      <label nz-checkbox [nzChecked]="isChecked(option)" [nzValue]="option">{{option.text}}</label>
+    </div>
+  </nz-checkbox-wrapper>
+</ng-template>

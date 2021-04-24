@@ -1,0 +1,76 @@
+[language-container] {
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+[file-path] {
+  margin-left: 5px;
+  font-size: 10px;
+  color: silver;
+}
+
+[language-icon] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+[language-label] {
+  font-weight: bolder;
+}
+
+[language-option] {
+  cursor: pointer;
+}
+
+.selected-option {
+  background-color: #edf4ff;
+}
+
+[header-button] {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #003d9e;
+  padding: 15px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+[header-button]:hover {
+  background-color: #f6f6f6;
+  font-weight: bold;
+}
+
+[content] {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin-top: 15px;
+}
+
+[actions] {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+[actions] button {
+  margin-right: 15px;
+}
+
+[actions] button:last-child {
+  margin-right: 0;
+}
+
+[tab-image] {
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+[tabs] {
+  margin-top: 15px;
+}

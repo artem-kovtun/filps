@@ -1,0 +1,66 @@
+:host {
+  width: 100%;
+}
+
+[container] {
+  display: flex;
+  flex-direction: column;
+}
+
+[question] {
+  font-weight: bold;
+}
+
+[question-label],
+[answers-label] {
+  color: silver
+}
+
+
+[question] {
+  margin-bottom: 10px;
+}
+
+[options] {
+  display: flex;
+  flex-direction: column;
+}
+
+[option-input] {
+  width: 100%;
+  margin-top: 5px;
+}
+
+[answers-editor] {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px
+}
+
+[answers-editor-header] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[multiple-correct-toggle] {
+  margin-right: 15px;
+}
+
+[multiple-correct-toggle] span {
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+[answer-option-editor] {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
+[remove-option-button] {
+  margin-left: 5px;
+}
+
+

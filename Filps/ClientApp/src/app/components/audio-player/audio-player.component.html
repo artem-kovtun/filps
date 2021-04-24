@@ -1,0 +1,15 @@
+<div *ngIf="view == View.Read">
+  <ngx-audio-player [playlist]="playlist" [displayTitle]="false" [autoPlay]="false" [displayPlaylist]="false"
+                    [displayVolumeControls]="false" [displayRepeatControls]="false" [disablePositionSlider]="false"
+                    [displayArtist]="false" [displayDuration]="false" [expanded]="true"></ngx-audio-player >
+</div>
+<div *ngIf="view == View.Edit" flex-column>
+  <div label>File link</div>
+  <div edit-container>
+    <input link-input primary-input [(ngModel)]="audioRecord.link">
+    <button upload-button primary-button="" (click)="fileSelector.click()">
+      <i button-icon nz-icon nzType="upload" nzTheme="outline"></i>
+      <span>Upload</span>
+      <input #fileSelector class="filesSelector" type="file" style="display:none" (change)="fileSelected($event.target.files[0])">
+    </button></div>
+</div>

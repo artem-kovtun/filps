@@ -1,0 +1,7 @@
+<span *ngIf="view == View.Read" heading>{{heading.text}}</span>
+<div *ngIf="view == View.Edit" flex-column>
+  <div flex-column>
+    <span heading-label>{{ 'heading' | translate}}</span>
+    <input primary-input [(ngModel)]="heading.text">
+  </div>
+</div>

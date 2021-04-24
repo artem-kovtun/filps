@@ -1,0 +1,66 @@
+<div container [cdkDragDisabled]="view == View.Read" [class.edit-container] = "view == View.Edit" cdkDrag>
+  <div *ngIf="view == View.Edit" header-actions>
+    <i
+      (click)="addAfterElement()"
+      hover-button
+      icon-button
+      nz-icon
+      nzType="plus"
+      nzTheme="outline"
+      [nzTooltipTitle]="'addAfterCurrent' | translate"
+      nzTooltipPlacement="bottom"
+      nz-tooltip
+      [nzTooltipMouseEnterDelay]="1"
+    ></i>
+    <i
+      (click)="copyElement()"
+      hover-button
+      icon-button
+      nz-icon
+      nzType="copy"
+      nzTheme="outline"
+      [nzTooltipTitle]="'copy' | translate"
+      nzTooltipPlacement="bottom"
+      nz-tooltip
+      [nzTooltipMouseEnterDelay]="1"
+    ></i>
+    <i
+      (click)="deleteElement()"
+      hover-button
+      icon-button
+      nz-icon
+      nzType="delete"
+      nzTheme="outline"
+      [nzTooltipTitle]="'delete' | translate"
+      nzTooltipPlacement="bottom"
+      nz-tooltip
+      [nzTooltipMouseEnterDelay]="1"
+    ></i>
+    <i
+      dd-button
+      nz-icon
+      nzType="drag"
+      nzTheme="outline"
+      [nzTooltipTitle]="'transfer' | translate"
+      nzTooltipPlacement="bottom"
+      nz-tooltip
+      [nzTooltipMouseEnterDelay]="1"
+      cdkDragHandle
+    ></i>
+  </div>
+  <div content>
+    <ng-content></ng-content>
+  </div>
+</div>
+<mat-menu #menu="matMenu" xPosition="before">
+  <div menu-actions>
+    <button (click)="copyElement()" action-button>
+      <i  nz-icon nzType="copy" nzTheme="outline"></i>
+      <span>Copy</span>
+    </button>
+    <button (click)="deleteElement()" button-danger action-button>
+      <i nz-icon nzType="delete" nzTheme="outline"></i>
+      <span>Delete</span>
+    </button>
+  </div>
+</mat-menu>
