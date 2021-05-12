@@ -13,269 +13,115 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369c1c26-11c9-465d-8849-7f9d6ad2c8bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/Filps/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Constants/BlobStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/DataStores/DatabaseDataStore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/DataStores/SessionDataStore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Factories/Contracts/IDataStoreFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Factories/DataStoreFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Filps.Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Mappings/Profiles/FileProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Models/Files/InteractiveDocument.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Models/Storage/GetFilesResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Models/Storage/StorageObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Models/User/StorageAuthentication.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Models/User/UserAuthentication.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Models/UserRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetFile/GetFileQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetFile/GetFileQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Users/Queries/GetUserAuthenticationQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Users/Queries/GetUserAuthenticationQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Blob/Contracts/IBlobStorageEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Blob/Engines/BlobStorageEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Blob/Filps.Blob.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Blob/Models/BlobStorageOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Common/Extensions/StringExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Common/Filps.Common.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Common/Utilities/StringUtilities.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Configurations/DatabaseConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Constants/StoredProcedures.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Enums/Storage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Filps.Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Models/Files/File.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Models/Files/FileData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Models/Files/FileMetadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Repositories/Contracts/IFileRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Repositories/FileRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Domain/Repositories/Repository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Engines/Contracts/IDriveEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Engines/Contracts/IGoogleDriveEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Engines/GoogleDriveEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Filps.Drives.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Models/FileData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Models/GoogleCredentials.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Models/StorageData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Drives/Models/StorageObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleDriveApi/CustomDataStore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleDriveApi/Filps.GoogleDriveApi.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleDriveApi/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleDriveApi/client_secret.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Contacts/IGoogleCredentialEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Contacts/IGoogleDriveEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Contacts/IGoogleProfileEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Engines/GoogleCredentialEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Engines/GoogleDriveEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Engines/GoogleProfileEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Filps.GoogleServices.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Models/Drive/FileContent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Models/Drive/StorageContent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Models/Drive/StorageFilters.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.GoogleServices/Models/GoogleCredentials.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Helpers/Engines/Contracts/ISessionEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Helpers/Engines/SessionEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Helpers/Filps.Helpers.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Security/Contracts/IAesEncryptionEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Security/Engines/AesEncryptionEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Security/Filps.Security.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.Security/Models/KeyInformation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps.sln.DotSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Bootstrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/audio-player/audio-player.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/audio-player/audio-player.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/audio-player/audio-player.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/audio-player/audio-player.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/confirm-modal/confirm-modal.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/confirm-modal/confirm-modal.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/confirm-modal/confirm-modal.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/confirm-modal/confirm-modal.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/content/content.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/content/content.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/content/content.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/content/content.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-element/document-element.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-element/document-element.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-element/document-element.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-element/document-element.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/fill-missing/fill-missing.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/fill-missing/fill-missing.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/fill-missing/fill-missing.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/fill-missing/fill-missing.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folder/folder.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folder/folder.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folder/folder.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folder/folder.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folders/folders.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folders/folders.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folders/folders.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/folders/folders.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/header/header.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/header/header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/heading/heading.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/heading/heading.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/heading/heading.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/heading/heading.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/images-collage/images-collage.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/images-collage/images-collage.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/images-collage/images-collage.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/images-collage/images-collage.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/no-files/no-files.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/no-files/no-files.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/no-files/no-files.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/no-files/no-files.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-auth/storage-auth.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-auth/storage-auth.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-auth/storage-auth.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-auth/storage-auth.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-header/storage-header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-header/storage-header.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-header/storage-header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage-header/storage-header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/text/text.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/text/text.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/text/text.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/text/text.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/youtube-embedded/youtube-embedded.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/youtube-embedded/youtube-embedded.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/youtube-embedded/youtube-embedded.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/youtube-embedded/youtube-embedded.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/interfaces/iCopyable.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/audioRecord.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/confirmModal.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/enums/confirmModalType.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/enums/documentElementType.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/enums/storage.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/enums/view.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/file.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/fileElement.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/fileMetadata.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/fillMissing.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/fillMissingType.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/getFilesQuery.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/heading.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/imagesCollage.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/missingOption.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/option.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/question.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/questionAnswer.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/questionOptions.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/storageAuthentication.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/storageData.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/storageObject.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/text.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/userAuthentication.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/youtube-embedded.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/services/storage.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/services/user.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/de.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/fr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/ru.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/audio.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/dropbox.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/empty.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/fill-missing.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/flags/de.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/flags/en.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/flags/fr.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/flags/ru.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/flags/ua.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/google-drive.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/google.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/heading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/microsoft.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/onedrive.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/options.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/pen.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/question.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/select.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/star-border.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/star-filled.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/text.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/youtube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/theme.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Controllers/FileController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Controllers/MediatorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Controllers/UserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Mappings/Converters/FileConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Mappings/Converters/FilesConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Mappings/Profiles/FileProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Models/Files/GetFileInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Models/Files/GetFilesInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Models/Files/OpenFileInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Models/Files/SaveFileInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Filps/Properties/ServiceDependencies/dfilps - Web Deploy/profile.arm.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/DeleteFile/DeleteFileCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/DeleteFile/DeleteFileCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/ToggleFilePin/ToggleFilePinCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/ToggleFilePin/ToggleFilePinCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetUserFiles/GetUserFilesQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetUserFiles/GetUserFilesQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Domain/Extensions/SqlParametersExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Domain/Helpers/Attributes/QueryParamIgnoreAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Domain/Helpers/Attributes/QueryParamNameAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Domain/Helpers/Converters/TypeConvertor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Domain/Models/Files/GetFilesFilters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps.Domain/Models/Shared/PagedList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/Attributes/JwtAuthorizeAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-record/document-record.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-record/document-record.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-record/document-record.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/document-record/document-record.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/interceptors/authToken.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/enums/questionType.enum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/pagedList.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/services/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/facebook-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/google-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/twitter-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/images/twitter.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Filps/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Filps/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Filps/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Filps/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Filps/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Filps/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Filps/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Filps/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Mappings/Profiles/FileProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Mappings/Profiles/FileProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Models/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Models/UserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetFile/GetFileQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetFile/GetFileQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Application/Requests/Users/Queries/GetUserAuthenticationQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Application/Requests/Users/Queries/GetUserAuthenticationQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Domain/Constants/StoredProcedures.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Domain/Constants/StoredProcedures.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Domain/Filps.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Domain/Filps.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Domain/Models/Files/FileMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Domain/Models/Files/FileMetadata.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Domain/Repositories/Contracts/IFileRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Domain/Repositories/Contracts/IFileRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Domain/Repositories/FileRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Domain/Repositories/FileRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Domain/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Domain/Repositories/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.GoogleServices/Contacts/IGoogleDriveEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.GoogleServices/Contacts/IGoogleDriveEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.GoogleServices/Engines/GoogleDriveEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.GoogleServices/Engines/GoogleDriveEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Security/Engines/AesEncryptionEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Security/Engines/AesEncryptionEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps.Security/Models/KeyInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.Security/Models/KeyInformation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Filps.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Bootstrapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/audio-player/audio-player.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/audio-player/audio-player.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/content/content.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/content/content.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/documents/documents.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-location-picker-modal/file-location-picker-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-page/file-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file-selector-page/file-selector-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/file/file.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/heading/heading.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/heading/heading.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-answer/question-answer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/question-options/question-options.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/section-pick/section-pick.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/components/storage/storage.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/file.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/file.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/fileMetadata.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/fileMetadata.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/getFilesQuery.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/getFilesQuery.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/questionAnswer.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/models/questionAnswer.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/app/services/storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/app/services/file.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/assets/i18n/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/ClientApp/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/ClientApp/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Controllers/FileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Controllers/FileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Controllers/MediatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Controllers/MediatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/Filps.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Filps.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/Pages/Error.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/Pages/Error.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/Pages/_ViewImports.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Mappings/Profiles/FileProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Mappings/Profiles/FileProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Models/Files/GetFileInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Models/Files/GetFileInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Models/Files/GetFilesInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Models/Files/GetFilesInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Models/Files/SaveFileInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Models/Files/SaveFileInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Filps/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filps/wwwroot/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filps/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Filps/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,70 +133,75 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/89/6b26f0f3/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/82EDDA9C-5EE4-4648-94AD-57D78115F338/1/FileDataStore.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F758DD2F-9E4C-41A0-B7A1-63138D66F75D/D/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3834795B-F41B-4E62-8161-509ECA0F5822/7d/16848257/IRequest`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F758DD2F-9E4C-41A0-B7A1-63138D66F75D/A/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06B00D97-009B-41DF-9139-0EA9D2348ACA/B/ClientSecrets.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3834795B-F41B-4E62-8161-509ECA0F5822/ed/7baee9b9/IRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06B00D97-009B-41DF-9139-0EA9D2348ACA/2B/AuthorizationCodeFlow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3834795B-F41B-4E62-8161-509ECA0F5822/af/2110f11e/IBaseRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B5FA0998-4431-4CF9-873B-0F5C66AA3A4F/38/IDataStore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/82EDDA9C-5EE4-4648-94AD-57D78115F338/1/FileDataStore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F758DD2F-9E4C-41A0-B7A1-63138D66F75D/D/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/OneDrive/Codes/Starling/Starling.WebApi/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06B00D97-009B-41DF-9139-0EA9D2348ACA/1C/UserCredential.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/OneDrive/Codes/Starling/Starling.WebApi/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F758DD2F-9E4C-41A0-B7A1-63138D66F75D/A/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3834795B-F41B-4E62-8161-509ECA0F5822/ed/7baee9b9/IRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1366539B-298B-45E7-9485-511F90247C9E/da/3c64240c/AuthorizationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/OneDrive/Codes/Starling/Starling.WebApi/Controllers/MediatorController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Filps.Domain/Repositories/Repository.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Models/Storage/FileData.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadFileQuery.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadFileQueryHandler.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQuery.cs" />
-        <option value="$PROJECT_DIR$/Filps/Models/Storage/DownloadFileInput.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Constants/BlobStorage.cs" />
         <option value="$PROJECT_DIR$/Filps.GoogleServices/Engines/GoogleDriveEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps/Controllers/UserController.cs" />
-        <option value="$PROJECT_DIR$/Filps/Models/Storage/GetFileInput.cs" />
+        <option value="$PROJECT_DIR$/Filps.GoogleServices/Contacts/IGoogleDriveEngine.cs" />
+        <option value="$PROJECT_DIR$/Filps/Bootstrapper.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQueryHandler.cs" />
         <option value="$PROJECT_DIR$/Filps/Models/Files/GetFileInput.cs" />
-        <option value="$PROJECT_DIR$/Filps/Models/Files/GetFilesInput.cs" />
-        <option value="$PROJECT_DIR$/Filps/Models/Files/OpenFileInput.cs" />
-        <option value="$PROJECT_DIR$/Filps/Mappings/Converters/FileConverter.cs" />
-        <option value="$PROJECT_DIR$/Filps.Domain/Models/Files/FileData.cs" />
-        <option value="$PROJECT_DIR$/Filps/Mappings/Converters/FilesConverter.cs" />
-        <option value="$PROJECT_DIR$/Filps.Domain/Models/Files/File.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Models/UserRequest.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommand.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQuery.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/GetFiles/GetGoogleDriveFilesQuery.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/GoogleDrive/Queries/DownloadFile/DownloadGoogleDriveFileQuery.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Users/Queries/GetUserAuthenticationQuery.cs" />
+        <option value="$PROJECT_DIR$/Filps/Models/Files/SaveFileInput.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps.Security/Engines/AesEncryptionEngine.cs" />
+        <option value="$PROJECT_DIR$/Filps.Security/Models/KeyInformation.cs" />
         <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQuery.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Models/Files/GetFilesFilters.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetUserFiles/GetUserFilesQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps/Mappings/Profiles/FileProfile.cs" />
+        <option value="$PROJECT_DIR$/Filps/Models/Files/GetFilesInput.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetUserFiles/GetUserFilesQuery.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Mappings/Profiles/FileProfile.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Models/Shared/PagedList.cs" />
         <option value="$PROJECT_DIR$/Filps.Domain/Models/Files/FileMetadata.cs" />
         <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/OpenFile/OpenFileQueryHandler.cs" />
-        <option value="$PROJECT_DIR$/Filps.Common/Utilities/StringUtilities.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileQueryHandler.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileQuery.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommand.cs" />
-        <option value="$PROJECT_DIR$/Filps.Domain/Enums/Storage.cs" />
-        <option value="$PROJECT_DIR$/Filps/Models/Files/SaveFileInput.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetFile/GetFileQuery.cs" />
-        <option value="$PROJECT_DIR$/Filps.Domain/Repositories/Contracts/IFileRepository.cs" />
-        <option value="$PROJECT_DIR$/Filps.Domain/Repositories/FileRepository.cs" />
-        <option value="$PROJECT_DIR$/Filps.Domain/Constants/StoredProcedures.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Mappings/Profiles/StorageProfile.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Mappings/Profiles/FileProfile.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQuery.cs" />
-        <option value="$PROJECT_DIR$/Filps/Controllers/FileController.cs" />
-        <option value="$PROJECT_DIR$/Filps/Mappings/Profiles/FileProfile.cs" />
-        <option value="$PROJECT_DIR$/Filps.Blob/BlobStorageEngine/BlobStorageEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps.Blob/BlobStorageEngine/IBlobStorageEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/DownloadFile/DownloadFileQueryHandler.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Models/Files/InterectiveDocument.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Models/Files/InteractiveDocument.cs" />
-        <option value="$PROJECT_DIR$/Filps.Security/Class1.cs" />
-        <option value="$PROJECT_DIR$/Filps.Blob/Contracts/IBlobStorageEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps.Blob/Engines/BlobStorageEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps.Security/Models/KeyInformation.cs" />
-        <option value="$PROJECT_DIR$/Filps.Security/Contracts/IAesEncryptionEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps.Security/Engines/AesEncryptionEngine.cs" />
-        <option value="$PROJECT_DIR$/Filps/appsettings.Development.json" />
-        <option value="$PROJECT_DIR$/Filps/Bootstrapper.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Constants/BlobStorage.cs" />
-        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/SaveFile/SaveFileCommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/ToggleFilePin/ToggleFilePinCommand.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/ToggleFilePin/ToggleFilePinCommandHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/DeleteFile/DeleteFileCommand.cs" />
+        <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Commands/DeleteFile/DeleteFileCommandHandler.cs" />
         <option value="$PROJECT_DIR$/Filps.Application/Requests/Files/Queries/GetFile/GetFileQueryHandler.cs" />
+        <option value="$PROJECT_DIR$/Filps/Controllers/FileController.cs" />
+        <option value="$PROJECT_DIR$/Filps/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/Filps/Controllers/MediatorController.cs" />
+        <option value="$PROJECT_DIR$/Filps/Filps.csproj" />
+        <option value="$PROJECT_DIR$/Filps/Program.cs" />
+        <option value="$PROJECT_DIR$/Filps/Attributes/JwtAuthorizeAttribute.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Filps.Domain.csproj" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Helpers/TypeConverters.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Helpers/Converters/TypeConverters.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Helpers/Converters/TypeConverter.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Helpers/Attributes/QueryParamIgnoreAttribute.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Repositories/Repository.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Helpers/Attributes/QueryParamNameAttribute.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Extensions/SqlParametersExtension.cs" />
+        <option value="$PROJECT_DIR$/Filps/appsettings.Development.json" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Repositories/Contracts/IFileRepository.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Constants/StoredProcedures.cs" />
+        <option value="$PROJECT_DIR$/Filps.Domain/Repositories/FileRepository.cs" />
+        <option value="$PROJECT_DIR$/Filps/appsettings.json" />
       </list>
     </option>
   </component>
@@ -363,11 +214,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.40222898" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.29685917" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.18591692" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.49244332" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.6683761" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -494,7 +345,42 @@
       <workItem from="1619198207157" duration="4883000" />
       <workItem from="1619257931724" duration="3878000" />
       <workItem from="1619280224931" duration="1004000" />
-      <workItem from="1619289730441" duration="1339000" />
+      <workItem from="1619289730441" duration="2116000" />
+      <workItem from="1619292793725" duration="404000" />
+      <workItem from="1619293972857" duration="741000" />
+      <workItem from="1619335163730" duration="10093000" />
+      <workItem from="1619380995815" duration="126000" />
+      <workItem from="1619381136264" duration="1449000" />
+      <workItem from="1619420518860" duration="1382000" />
+      <workItem from="1619439226003" duration="3747000" />
+      <workItem from="1619532638943" duration="4293000" />
+      <workItem from="1619615338187" duration="2324000" />
+      <workItem from="1619623360295" duration="599000" />
+      <workItem from="1619772607639" duration="55000" />
+      <workItem from="1619810817209" duration="1231000" />
+      <workItem from="1619855557026" duration="1953000" />
+      <workItem from="1619865041626" duration="1384000" />
+      <workItem from="1619879469970" duration="2215000" />
+      <workItem from="1619894243547" duration="4215000" />
+      <workItem from="1619942472888" duration="7547000" />
+      <workItem from="1619965232279" duration="2002000" />
+      <workItem from="1619980062848" duration="1007000" />
+      <workItem from="1619981162339" duration="636000" />
+      <workItem from="1620043152426" duration="4957000" />
+      <workItem from="1620113533349" duration="1833000" />
+      <workItem from="1620126203204" duration="637000" />
+      <workItem from="1620144864926" duration="1316000" />
+      <workItem from="1620239475706" duration="30000" />
+      <workItem from="1620239522261" duration="741000" />
+      <workItem from="1620311748306" duration="495000" />
+      <workItem from="1620329560402" duration="637000" />
+      <workItem from="1620371822418" duration="161000" />
+      <workItem from="1620371998339" duration="650000" />
+      <workItem from="1620390353078" duration="663000" />
+      <workItem from="1620393078448" duration="4162000" />
+      <workItem from="1620583778332" duration="1912000" />
+      <workItem from="1620661956511" duration="1200000" />
+      <workItem from="1620740215143" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1616254106740</created>
@@ -532,118 +418,126 @@
     <option name="LAST_COMMIT_MESSAGE" value="project init" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="839" height="686" key="DebuggerActiveHint" timestamp="1619259935324">
+    <state x="780" y="260" key="#xdebugger.evaluate" timestamp="1619442883226">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="839" height="686" key="DebuggerActiveHint/0.0.2048.1112@0.0.2048.1112" timestamp="1619259935324" />
-    <state width="2005" height="379" key="GridCell.Tab.0.bottom" timestamp="1619290971636">
+    <state x="780" y="260" key="#xdebugger.evaluate/0.0.2048.1112@0.0.2048.1112" timestamp="1619442883226" />
+    <state width="1183" height="686" key="DebuggerActiveHint" timestamp="1619894841801">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1183" height="686" key="DebuggerActiveHint/0.0.2048.1112@0.0.2048.1112" timestamp="1619894841801" />
+    <state x="93" y="93" width="1862" height="926" key="DiffContextDialog" timestamp="1619983372805">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="93" y="93" width="1862" height="926" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1619983372805" />
+    <state width="2005" height="380" key="GridCell.Tab.0.bottom" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.0.bottom/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865971" />
-    <state width="2005" height="379" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.0.center" timestamp="1619290971635">
+    <state width="2005" height="380" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.0.center" timestamp="1620749383132">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.0.center/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865971" />
-    <state width="2005" height="379" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971635" />
-    <state width="2005" height="379" key="GridCell.Tab.0.left" timestamp="1619290971634">
+    <state width="2005" height="380" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383132" />
+    <state width="2005" height="380" key="GridCell.Tab.0.left" timestamp="1620749383132">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.0.left/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865971" />
-    <state width="2005" height="379" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971634" />
-    <state width="2005" height="379" key="GridCell.Tab.0.right" timestamp="1619290971635">
+    <state width="2005" height="380" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383132" />
+    <state width="2005" height="380" key="GridCell.Tab.0.right" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.0.right/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865971" />
-    <state width="2005" height="379" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971635" />
-    <state width="2005" height="379" key="GridCell.Tab.1.bottom" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.1.bottom" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.1.bottom/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.1.center" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.1.center" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.1.center/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.1.left" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.1.left" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.1.left/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865971" />
-    <state width="2005" height="379" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.1.right" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.1.right" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.1.right/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.2.bottom" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.2.bottom" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.2.bottom/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.2.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.2.center" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.2.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.2.center" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.2.center/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.2.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.2.left" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.2.center/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.2.left" timestamp="1620749383133">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.2.left/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.2.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.2.right" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.2.left/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383133" />
+    <state width="2005" height="380" key="GridCell.Tab.2.right" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.2.right/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.2.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.3.bottom" timestamp="1619290971637">
+    <state width="2005" height="380" key="GridCell.Tab.2.right/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.3.bottom" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.3.bottom/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.3.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.3.center" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.3.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.3.center" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.3.center/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.3.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.3.left" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.3.center/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.3.left" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.3.left/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.3.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.3.right" timestamp="1619290971636">
+    <state width="2005" height="380" key="GridCell.Tab.3.left/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.3.right" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.3.right/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.3.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971636" />
-    <state width="2005" height="379" key="GridCell.Tab.4.bottom" timestamp="1619290971637">
+    <state width="2005" height="380" key="GridCell.Tab.3.right/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.4.bottom" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.4.bottom/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865973" />
-    <state width="2005" height="379" key="GridCell.Tab.4.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971637" />
-    <state width="2005" height="379" key="GridCell.Tab.4.center" timestamp="1619290971637">
+    <state width="2005" height="380" key="GridCell.Tab.4.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.4.center" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.4.center/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865973" />
-    <state width="2005" height="379" key="GridCell.Tab.4.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971637" />
-    <state width="2005" height="379" key="GridCell.Tab.4.left" timestamp="1619290971637">
+    <state width="2005" height="380" key="GridCell.Tab.4.center/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.4.left" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.4.left/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865972" />
-    <state width="2005" height="379" key="GridCell.Tab.4.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971637" />
-    <state width="2005" height="379" key="GridCell.Tab.4.right" timestamp="1619290971637">
+    <state width="2005" height="380" key="GridCell.Tab.4.left/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
+    <state width="2005" height="380" key="GridCell.Tab.4.right" timestamp="1620749383134">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="379" key="GridCell.Tab.4.right/-1920.185.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1618339865973" />
-    <state width="2005" height="379" key="GridCell.Tab.4.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619290971637" />
+    <state width="2005" height="380" key="GridCell.Tab.4.right/0.0.2048.1112@0.0.2048.1112" timestamp="1620749383134" />
     <state x="617" y="288" key="Rider.ProjectTemplateDialog.Size" timestamp="1619260425026">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="288" key="Rider.ProjectTemplateDialog.Size/0.0.2048.1112@0.0.2048.1112" timestamp="1619260425026" />
-    <state x="843" y="246" key="RiderGenerateDialog" timestamp="1619100906670">
+    <state x="843" y="246" key="RiderGenerateDialog" timestamp="1619946806501">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="843" y="246" key="RiderGenerateDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1619100906670" />
+    <state x="843" y="246" key="RiderGenerateDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1619946806501" />
     <state x="533" y="201" key="SettingsEditor" timestamp="1619100755662">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -652,10 +546,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="874" y="470" key="VCS.ChangelistChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1619260437183" />
-    <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1617466122899">
+    <state width="1031" height="563" key="XDebugger.FullValuePopup" timestamp="1619421177963">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1031" height="563" key="XDebugger.FullValuePopup/0.0.2048.1112@0.0.2048.1112" timestamp="1617466122899" />
+    <state width="1031" height="563" key="XDebugger.FullValuePopup/0.0.2048.1112@0.0.2048.1112" timestamp="1619421177963" />
     <state x="842" y="470" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618300175943">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -669,6 +563,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow" memberName="Scopes" />
+        <PinnedItemInfo parentTag="Type#Microsoft.AspNetCore.Http.DefaultHttpContext" memberName="User" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

@@ -20,12 +20,23 @@ export class QuestionOptionsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isChecked = (option: Option) =>  this.questionOptions.selectedOptions.map(o => o.text).includes(option.text);
+  isChecked = (option: Option) => {
+    if (this.questionOptions.selectedOptions !== null) {
+      return this.questionOptions.selectedOptions.map(o => o.text).includes(option.text);
+    }
+  }
 
   saveSelectedOptions = (options: Option[]) => {
     this.questionOptions.selectedOptions = options;
     this.questionOptionsChange.emit(this.questionOptions);
   }
+
+  clearSelection = () => {
+    this.questionOptions.selectedOptions = null;
+    this.questionOptionsChange.emit(this.questionOptions);
+  };
+
+  isClearSelectionButtonVisible = () => this.questionOptions.selectedOptions !== null;
 
   addOption = () => this.questionOptions.options.push({ text: null });
 

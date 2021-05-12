@@ -6,3 +6,11 @@
   height: calc(100vh - 49px);
   overflow-y: auto;
 }
+
+@media screen and (max-width: 950px) {
+
+  [content] {
+    height: calc(100vh - 51px);
+  }
+
+}

@@ -4,10 +4,12 @@ using MediatR;
 
 namespace Filps.Application.Requests.Files.Queries.OpenFile
 {
-    public class OpenFileQuery: UserRequest, IRequest<File>, IRequest<Unit>
+    public class OpenFileQuery : UserRequest, IRequest<File>
     {
-        public OpenFileQuery(string sessionId, string email) : base(sessionId, email) { }
+        public OpenFileQuery(string email) : base(email) { }
         
         public FileData File { get; set; }
+
+
     }
 }

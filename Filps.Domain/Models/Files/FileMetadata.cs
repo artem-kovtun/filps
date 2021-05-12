@@ -8,8 +8,7 @@ namespace Filps.Domain.Models.Files
         public string Id { get; set; }
         public string Name { get; set; }
         public bool IsPinned { get; set; }
-        public Storage? Source { get; set; }
         public long? Size { get; set; }
-        public DateTime? LastTimeAccessed { get; set; }
+        public DateTime? AccessedOn { get; set; }
     }
 }

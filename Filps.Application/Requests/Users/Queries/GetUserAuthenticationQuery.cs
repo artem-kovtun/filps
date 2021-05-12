@@ -6,6 +6,6 @@ namespace Filps.Application.Requests.Users.Queries
 {
     public class GetUserAuthenticationQuery : UserRequest, IRequest<UserAuthentication>
     {
-        public GetUserAuthenticationQuery(string sessionId, string email) : base(sessionId, email) { }
+        public GetUserAuthenticationQuery(string email) : base(email) { }
     }
 }

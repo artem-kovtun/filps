@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Filps.Application.Constants;
 using Filps.Application.Models.Files;
 using Filps.Blob.Contracts;
 using Filps.Common.Utilities;
@@ -39,13 +38,10 @@ namespace Filps.Application.Requests.Files.Commands.SaveFile
             xmlSerializer.Serialize(stream, interactiveDocument);
             stream.Position = 0;
 
-            if (request.Id == null)
-            {
-                request.Id = StringUtilities.GetRandomStringKey();
-            }
+            request.Id ??= StringUtilities.GetRandomStringKey();
 
-            await _blobStorageEngine.UploadAsync("files", request.Id, stream);
-            await _repository.AddFileAsync(request.Id, request.Name, Storage.Filps, request.Email ?? "a.kvtn14@gmail.com");
+            await _blobStorageEngine.UploadAsync(BlobStorage.Containers.Files, request.Id, stream);
+            await _repository.SaveFileAsync(request.Id, request.Name, request.Email);
 
             return request.Id;
         }

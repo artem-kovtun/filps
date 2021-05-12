@@ -2,8 +2,6 @@
   margin-right: 25px;
 }
 
-
-
 [filename-button] {
   margin-left: 25px;
 }
@@ -34,7 +32,7 @@
   border-radius: 2px;
   width: 350px;
   padding: 7px 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 [file-path] {
@@ -102,13 +100,20 @@
   font-weight: bold;
 }
 
+[file-actions] {
+  margin-right: 10px;
+}
 
-[file-actions] i {
+[file-actions] [icon-button] {
   margin-left: 20px;
 }
 
-[file-actions] i:first-child {
+[file-actions] [icon-button]:first-child {
   margin-left: 0;
+}
+
+[content-container] {
+  width: 100%;
 }
 
 [content] {
@@ -120,4 +125,27 @@
 
 [cancel-edit-button] {
   margin-right: 15px;
+}
+
+[modified-tag] {
+  font-size: 9px;
+  font-weight: bold;
+  padding: 0 3px;
+  line-height: 15px;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+
+@media screen and (max-width: 950px) {
+
+  [content] {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  [content]::-webkit-scrollbar {
+    display: none;
+  }
+
 }

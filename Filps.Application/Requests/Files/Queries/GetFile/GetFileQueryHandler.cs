@@ -31,6 +31,9 @@ namespace Filps.Application.Requests.Files.Queries.GetFile
         public async Task<File> Handle(GetFileQuery request, CancellationToken cancellationToken)
         {
             var fileMetadata = await _fileRepository.GetFileAsync(request.Id);
+
+            if (fileMetadata == null) return null;
+            
             var fileContentStream = await _blobStorageEngine.DownloadAsync(BlobStorage.Containers.Files, request.Id);
             
             var xmlSerializer = new XmlSerializer(typeof(InteractiveDocument));

@@ -38,3 +38,11 @@
 [add-section-button] i {
   margin-right: 5px;
 }
+
+@media screen and (max-width: 950px) {
+
+  [file] {
+    padding: 25px 15px;
+  }
+}
+

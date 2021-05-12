@@ -1,7 +1,11 @@
-import {Storage} from './enums/storage.enum';
-
 export class GetFilesQuery {
-  storage: Storage;
-  parentId: string;
+
+  constructor(page: number, take: number) {
+    this.page = page;
+    this.take = take;
+  }
+
+  page: number;
+  take: number;
   search: string;
 }

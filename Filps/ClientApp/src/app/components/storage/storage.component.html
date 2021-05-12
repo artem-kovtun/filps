@@ -7,7 +7,7 @@
     (onSearch)="search($event)"></app-storage-header>
 
   <div *ngIf="!isDataLoading" flex-column>
-    <div *ngIf="isDataPresent" flex-column="">
+    <div *ngIf="isDataPresent" flex-column>
       <app-folders [folders]="data.folders" (folderClicked)="folderSelected($event)"></app-folders>
       <app-documents [files]="data.files" (fileClicked)="fileSelected($event)"></app-documents>
     </div>

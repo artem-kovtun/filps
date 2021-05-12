@@ -7,18 +7,29 @@
   flex-direction: column;
 }
 
+[question-header] {
+  justify-content: space-between;
+  height: 33px;
+}
+
 [question] {
   font-weight: bold;
+}
+
+[clear-selection-button] {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+[container]:hover [clear-selection-button] {
+  visibility: visible;
+  opacity: 1;
 }
 
 [question-label],
 [answers-label] {
   color: silver
-}
-
-
-[question] {
-  margin-bottom: 10px;
 }
 
 [options] {

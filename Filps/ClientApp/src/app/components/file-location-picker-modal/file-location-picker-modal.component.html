@@ -1,36 +1,77 @@
 <div flex-column>
   <span label>Filename</span>
-  <input file-name-input primary-input type="text">
+  <input [(ngModel)]="this.file.name" file-name-input primary-input type="text">
 
-  <span label>Location</span>
-  <nz-radio-group flex [(ngModel)]="storage" nzButtonStyle="solid">
-    <label nz-radio-button [nzValue]="Storage.Filps">
+
+  <div *ngIf="isDataLoaded && !isAuthorized" flex-column>
+    <nz-divider nzText="Login to save"></nz-divider>
+
+    <div auth-buttons>
+      <button (click)="loginWithGoogle()" primary-button login-button google-login-button>
+        <img login-button-icon src="./assets/images/google-white.svg" alt="">
+        <span>Google</span>
+      </button>
+      <button (click)="loginWithFacebook()" primary-button login-button facebook-login-button>
+        <img login-button-icon src="./assets/images/facebook-white.svg" alt="">
+        <span>Facebook</span>
+      </button>
+      <button primary-button login-button twitter-login-button>
+        <img login-button-icon src="./assets/images/twitter-white.svg" alt="">
+        <span>Twitter</span>
+      </button>
+    </div>
+  </div>
+
+
+
+  <!--
+
+    <span label>Location</span>
+  <nz-select nzPlaceHolder="Select language" [(ngModel)]="storage" [nzCustomTemplate]="storageSelectTemplate">
+    <nz-option language-option nzCustomContent nzLabel="Filps" [nzValue]="Storage.Filps">
       <span>Filps</span>
-    </label>
-    <label storage-label-container nz-radio-button [nzValue]="Storage.GoogleDrive">
-      <div flex storage-label>
-        <img storage-icon src="./assets/images/google-drive.svg">
-        <span>Google Drive</span>
-      </div>
-    </label>
-    <label storage-label-container nz-radio-button [nzValue]="Storage.OneDrive">
-      <div flex storage-label>
-        <img storage-icon src="./assets/images/onedrive.svg">
-        <span>OneDrive</span>
-      </div>
-    </label>
-    <label storage-label-container nz-radio-button [nzValue]="Storage.Dropbox">
-      <div flex storage-label>
-        <img storage-icon src="./assets/images/dropbox.svg">
-        <span>Dropbox</span>
-      </div>
-    </label>
-  </nz-radio-group>
+    </nz-option>
+    <nz-option language-option nzCustomContent nzLabel="Google Drive" [nzValue]="Storage.GoogleDrive">
+      <img storage-option-image src="assets/images/google-drive.svg">
+      <span>Google Drive</span>
+    </nz-option>
+  </nz-select>
+  <ng-template language-option #storageSelectTemplate let-selected>
+    <img *ngIf="selected.nzValue != 4" storage-option-image src='{{ "assets/images/" + selected.nzValue + ".svg" }}'>
+    <span>{{ selected.nzLabel }}</span>
+  </ng-template>
 
-  <app-storage storage *ngIf="this.storage == Storage.GoogleDrive" [storage]="Storage.GoogleDrive" [isAuthorized]="true"></app-storage>
-  <app-storage storage *ngIf="this.storage == Storage.OneDrive" [storage]="Storage.OneDrive" [isAuthorized]="false"></app-storage>
+  <div storage flex-column *ngIf="this.storage !== Storage.Filps">
+    <div flex  no-select>
+      <i (click)="back()" back-icon *ngIf="isBackButtonVisible()" nz-icon icon-button nzType="arrow-left" nzTheme="outline" [nzTooltipTitle]="'back' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1"></i>
+      <nz-breadcrumb breadcrumb>
+        <nz-breadcrumb-item>
+          <i nz-icon nzType="home"></i>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item *ngFor="let folder of breadcrumb">
+          <span>{{folder.name}}</span>
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </div>
+    <div folders-list>
+      <button secondary-button folder flex>
+        <i folder-icon nz-icon nzType="folder" nzTheme="outline"></i>
+        <span>Folder name</span>
+      </button>
+      <button secondary-button folder flex>
+        <i folder-icon nz-icon nzType="folder" nzTheme="outline"></i>
+        <span>Projects</span>
+      </button>
+      <button secondary-button folder flex>
+        <i folder-icon nz-icon nzType="folder" nzTheme="outline"></i>
+        <span>Study</span>
+      </button>
+    </div>
+  </div>
 
-  <div actions>
+  -->
+
+  <div *ngIf="isDataLoaded && isAuthorized" actions>
     <button (click)="cancelSelect()" secondary-button cancel-edit-button button-danger>
       <i button-icon nz-icon nzType="close" nzTheme="outline" ></i>
       <span>{{ 'cancel' | translate}}</span>

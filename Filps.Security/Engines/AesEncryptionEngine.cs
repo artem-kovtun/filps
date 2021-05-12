@@ -19,12 +19,9 @@ public class AesEncryptionEngine : IAesEncryptionEngine
         
         public async Task<string> EncryptAsync(string source)
         {
-            using (var aesAlg = Aes.Create())
+            using (var aes = new AesManaged())
             {
-                aesAlg.Key = _keyInformation.Key;
-                aesAlg.IV = _keyInformation.Iv;
-
-                var encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+                var encryptor = aes.CreateEncryptor(_keyInformation.KeyBytes, _keyInformation.IvBytes);
                 using (var msEncrypt = new MemoryStream())
                 {
                     using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
@@ -43,25 +40,25 @@ public class AesEncryptionEngine : IAesEncryptionEngine
         public async Task<string> DecryptAsync(string decryptedSource)
         {
             var cipherBytes = Convert.FromBase64String(decryptedSource);
-            
-            using (var aesAlg = Aes.Create())
-            {
-                aesAlg.Key = _keyInformation.Key;
-                aesAlg.IV = _keyInformation.Iv;
 
-                var decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+            string plaintext;
+
+            using (var aes = new AesManaged())
+            {
+                var decryptor = aes.CreateDecryptor(_keyInformation.KeyBytes, _keyInformation.IvBytes);
                 using (var msDecrypt = new MemoryStream(cipherBytes))
                 {
                     using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
                     {
                         using (var srDecrypt = new StreamReader(csDecrypt))
                         {
-                             return await srDecrypt.ReadToEndAsync();
+                            plaintext = await srDecrypt.ReadToEndAsync();
                         }
                     }
                 }
-
             }
+
+            return plaintext;
         }
     }
 }

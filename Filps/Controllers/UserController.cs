@@ -12,10 +12,9 @@ namespace Filps.Controllers
     {
         [HttpGet("authentication")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetAuthentication()
+        public async Task<IActionResult> GetAuthentication() 
         {
-            var a = Session.Keys.ToList();
-            return Ok(await Mediator.Send(new GetUserAuthenticationQuery(Session.Id, Email)));
+            return Ok(await Mediator.Send(new GetUserAuthenticationQuery(Email)));
         }
         
         [HttpGet("externalLogin")]

@@ -2,8 +2,8 @@
 {
     public class GetFilesInput
     {
-        public Domain.Enums.Storage Storage { get; set; }
-        public string ParentId { get; set; }
+        public int? Page { get; set; }
+        public int? Take { get; set; }
         public string Search { get; set; }
     }
 }

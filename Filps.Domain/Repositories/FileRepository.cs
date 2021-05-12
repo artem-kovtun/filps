@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Filps.Domain.Configurations;
 using Filps.Domain.Constants;
-using Filps.Domain.Enums;
 using Filps.Domain.Models.Files;
+using Filps.Domain.Models.Shared;
 using Filps.Domain.Repositories.Contracts;
 using Microsoft.Extensions.Options;
 
@@ -13,28 +12,49 @@ namespace Filps.Domain.Repositories
     {
         public FileRepository(IOptions<DatabaseConfiguration> databaseConfiguration) : base(databaseConfiguration) { }
 
-        public Task AddFileAsync(string id, string name, Storage storage, string createdBy)
+        public Task SaveFileAsync(string id, string name, string userEmail)
         {
-            return QueryFirstOrDefaultAsync<string>(StoredProcedures.AddFile, new
+            return ExecuteScalarProcedure<string>(StoredProcedures.SaveFile, new
             {
-                _id = id,
-                _name = name,
-                _storage = storage,
-                _created_by = createdBy
+                id,
+                name,
+                userEmail
             });
         }
 
         public Task<FileMetadata> GetFileAsync(string id)
         {
-            return QueryJsonAsync<FileMetadata>(StoredProcedures.GetFile, new
+            return ExecuteJsonResultProcedureAsync<FileMetadata>(StoredProcedures.GetFile, new
             {
-                _id = id
+                id
             });
         }
 
-        public Task<FileMetadata> GetUserFilesAsync(string email)
+        public Task<PagedList<FileMetadata>> GetUserFilesAsync(GetFilesFilters filters)
         {
-            throw new System.NotImplementedException();
+            return ExecuteJsonResultProcedureAsync<PagedList<FileMetadata>>(StoredProcedures.GetFiles, new
+            {
+                userEmail = filters.Email,
+                page = filters.Page ?? 1,
+                take = filters.Take ?? 10,
+                search = filters.Search ?? string.Empty
+            });
+        }
+
+        public async Task ToggleFilePinAsync(string id)
+        { 
+            await ExecuteScalarProcedure<string>(StoredProcedures.ToggleFilePin, new
+            {
+                id
+            });
+        }
+
+        public Task<bool> DeleteFile(string id)
+        {
+            return ExecuteScalarProcedure<bool>(StoredProcedures.DeleteFile, new
+            {
+                id
+            });
         }
     }
 }

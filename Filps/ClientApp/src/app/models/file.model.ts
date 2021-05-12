@@ -1,9 +1,6 @@
-import {Storage} from './enums/storage.enum';
-
-export class File {
+export class FileModel {
   id: string;
   name: string;
-  content: string;
-  source?: Storage;
+  serializedContent: string;
   path: string;
 }

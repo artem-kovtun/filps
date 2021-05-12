@@ -1,7 +1,10 @@
 {
   "newBlankDocument": "Новый документ",
+  "newBlankDocumentMobile": "Новый документ",
   "openExisting": "Открыть существующий",
+  "openExistingMobile": "Открыть",
   "recent": "Недавние",
+  "files": "Файлы",
   "login": "Войти",
   "back": "Назад",
   "pin": "Закрепить",
@@ -13,6 +16,7 @@
   "transfer": "Перенести",
   "sync": "Синхронизировать",
   "syncing": "Синхронизация",
+  "profile": "Профиль",
   "logout": "Выйти",
   "addAfterCurrent": "Добавить после",
   "copy": "Копировать",

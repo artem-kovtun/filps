@@ -3,7 +3,7 @@ import {StorageData} from '../../models/storageData.model';
 import {Storage} from '../../models/enums/storage.enum';
 import {GetFilesQuery} from '../../models/getFilesQuery.model';
 import {FileMetadata} from '../../models/fileMetadata.model';
-import {FileService} from '../../services/storage.service';
+import {FileService} from '../../services/file.service';
 
 @Component({
   selector: 'app-storage',
@@ -15,7 +15,7 @@ export class StorageComponent implements OnInit {
   @Input() storage: Storage;
   @Input() isAuthorized: boolean;
   data: StorageData = new StorageData();
-  query: GetFilesQuery = new GetFilesQuery();
+  query: GetFilesQuery = new GetFilesQuery(1, 10);
   breadcrumb: Array<FileMetadata> = [];
   syncing = false;
 
@@ -25,20 +25,24 @@ export class StorageComponent implements OnInit {
   constructor(private fileService: FileService) { }
 
   ngOnInit(): void {
-    this.query.storage = this.storage;
-    if (this.isAuthorized) {
+    /*
+        if (this.isAuthorized) {
       this.fileService.list(this.query).subscribe(data => {
         this.data = data;
         this.isDataPresent = !(data.folders.length === 0 && data.files.length === 0);
         this.isDataLoading = false;
       });
     }
+     */
+
   }
 
   sync = () => {
     this.fileService.list(this.query).subscribe(data => {
+      /*
       this.data = data;
       this.isDataPresent = !(data.folders.length === 0 && data.files.length === 0);
+       */
       this.isDataLoading = false;
     });
   }
@@ -48,6 +52,7 @@ export class StorageComponent implements OnInit {
   }
 
   folderSelected = (id: string) => {
+    /*
     this.isDataLoading = true;
     const folder = this.data.folders.filter(f => f.id === id)[0];
     this.query.parentId = id;
@@ -59,19 +64,24 @@ export class StorageComponent implements OnInit {
         this.breadcrumb.push(folder);
       }
     });
+     */
+
   }
 
   search = (query: string) => {
-    this.isDataLoading = true;
+    /*
+        this.isDataLoading = true;
     this.query.search = query;
     this.fileService.list(this.query).subscribe(data => {
       this.data = data;
       this.isDataPresent = !(data.folders.length === 0 && data.files.length === 0);
       this.isDataLoading = false;
     });
+     */
   }
 
   backClick = () => {
+    /*
     this.isDataLoading = true;
     const breadcrumbLength = this.breadcrumb.length;
     this.query.parentId = breadcrumbLength > 1 ? this.breadcrumb[breadcrumbLength - 2].id : null;
@@ -81,9 +91,11 @@ export class StorageComponent implements OnInit {
       this.breadcrumb.pop();
       this.isDataLoading = false;
     });
+   */
   }
 
   getData = () => {
+    /*
     this.isDataLoading = true;
     this.fileService.list(this.query).subscribe(data => {
       this.data = data;
@@ -91,14 +103,17 @@ export class StorageComponent implements OnInit {
       this.isDataPresent = !(data.folders.length === 0 && data.files.length === 0);
       this.isDataLoading = false;
     });
+ */
   }
 
   syncData = () => {
+    /*
     this.isDataLoading = true;
     this.fileService.list(this.query).subscribe(data => {
       this.data = data;
       this.isDataPresent = !(data.folders.length === 0 && data.files.length === 0);
       this.isDataLoading = false;
     });
+ */
   }
 }

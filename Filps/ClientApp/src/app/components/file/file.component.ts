@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FileElementType} from '../../models/enums/documentElementType.enum';
 import {View} from '../../models/enums/view.enum';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
@@ -24,6 +24,7 @@ export class FileComponent implements OnInit {
   View = View;
 
   @Input() fileContent = new Array<FileElement>();
+  @Output() fileContentChange = new EventEmitter<Array<FileElement>>();
   @Input() view = View.Read;
 
   constructor(public dialog: MatDialog) { }
@@ -40,6 +41,7 @@ export class FileComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+    this.fileContentChange.emit(this.fileContent);
   }
 
   deleteFileElement = (index: number) => {
@@ -57,6 +59,7 @@ export class FileComponent implements OnInit {
     dialog.afterClosed().subscribe(isConfirmed => {
       if (isConfirmed) {
         this.fileContent = this.fileContent.filter((_, i) => i !== index);
+        this.fileContentChange.emit(this.fileContent);
       }
     });
   }
@@ -67,6 +70,7 @@ export class FileComponent implements OnInit {
       type: fileElement.type,
       model: Object.assign({}, fileElement.model)
     });
+    this.fileContentChange.emit(this.fileContent);
   }
 
   addSection = () => {
@@ -78,6 +82,7 @@ export class FileComponent implements OnInit {
     dialog.afterClosed().subscribe(value => {
       if (value != null) {
         this.addNewSectionToFile(this.fileContent.length, value);
+        this.fileContentChange.emit(this.fileContent);
       }
     });
   }
@@ -91,6 +96,7 @@ export class FileComponent implements OnInit {
     dialog.afterClosed().subscribe(value => {
       if (value != null) {
         this.addNewSectionToFile(index + 1, value);
+        this.fileContentChange.emit(this.fileContent);
       }
     });
   }
@@ -106,5 +112,9 @@ export class FileComponent implements OnInit {
     ]);
 
     this.fileContent.splice(index, 0, { type, model: typeModelMap.get(type) });
+  }
+
+  fileElementChange = () => {
+    this.fileContentChange.emit(this.fileContent);
   }
 }

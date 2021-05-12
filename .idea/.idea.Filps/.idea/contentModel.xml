@@ -10,6 +10,9 @@
         <e p=".gitignore" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
+        <e p="Attributes" t="Include">
+          <e p="JwtAuthorizeAttribute.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Bootstrapper.cs" t="Include" />
         <e p="ClientApp" t="Include">
@@ -472,8 +475,14 @@
                   <e p="ru.json" t="Include" />
                 </e>
                 <e p="images" t="Include">
+                  <e p="1.svg" t="Include" />
+                  <e p="audio.svg" t="Include" />
+                  <e p="close.svg" t="Include" />
                   <e p="dropbox.svg" t="Include" />
                   <e p="empty.svg" t="Include" />
+                  <e p="facebook-white.svg" t="Include" />
+                  <e p="facebook.svg" t="Include" />
+                  <e p="fill-missing.svg" t="Include" />
                   <e p="flags" t="Include">
                     <e p="de.svg" t="Include" />
                     <e p="en.svg" t="Include" />
@@ -482,11 +491,21 @@
                     <e p="ua.svg" t="Include" />
                   </e>
                   <e p="google-drive.svg" t="Include" />
+                  <e p="google-white.svg" t="Include" />
                   <e p="google.svg" t="Include" />
+                  <e p="heading.svg" t="Include" />
                   <e p="microsoft.svg" t="Include" />
                   <e p="onedrive.svg" t="Include" />
+                  <e p="options.svg" t="Include" />
+                  <e p="pen.svg" t="Include" />
+                  <e p="question.svg" t="Include" />
+                  <e p="select.svg" t="Include" />
                   <e p="star-border.svg" t="Include" />
                   <e p="star-filled.svg" t="Include" />
+                  <e p="text.svg" t="Include" />
+                  <e p="twitter-white.svg" t="Include" />
+                  <e p="twitter.svg" t="Include" />
+                  <e p="youtube.svg" t="Include" />
                 </e>
                 <e p="outline" t="Include">
                   <e p=".gitkeep" t="Include" />
@@ -1637,10 +1656,10 @@
               </e>
               <e p="favicon.ico" t="Include" />
               <e p="index.html" t="Include" />
-              <e p="main.0e0d01819692555b3f74.js" t="Include" />
+              <e p="main.459b8a22a59ef0a750cf.js" t="Include" />
               <e p="polyfills.35a5ca1855eb057f016a.js" t="Include" />
               <e p="runtime.afc0a856b79608dab1af.js" t="Include" />
-              <e p="styles.8be12bfde798c82fb86c.css" t="Include" />
+              <e p="styles.44da49495ce22838e8c2.css" t="Include" />
             </e>
           </e>
           <e p="e2e" t="Include">
@@ -1687,6 +1706,12 @@
                   <e p="document-element.component.scss" t="Include" />
                   <e p="document-element.component.spec.ts" t="Include" />
                   <e p="document-element.component.ts" t="Include" />
+                </e>
+                <e p="document-record" t="Include">
+                  <e p="document-record.component.html" t="Include" />
+                  <e p="document-record.component.scss" t="Include" />
+                  <e p="document-record.component.spec.ts" t="Include" />
+                  <e p="document-record.component.ts" t="Include" />
                 </e>
                 <e p="documents" t="Include">
                   <e p="documents.component.html" t="Include" />
@@ -1809,6 +1834,9 @@
                   <e p="youtube-embedded.component.ts" t="Include" />
                 </e>
               </e>
+              <e p="interceptors" t="Include">
+                <e p="authToken.interceptor.ts" t="Include" />
+              </e>
               <e p="interfaces" t="Include">
                 <e p="iCopyable.interface.ts" t="Include" />
               </e>
@@ -1818,6 +1846,7 @@
                 <e p="Enums" t="Include">
                   <e p="confirmModalType.enum.ts" t="Include" />
                   <e p="documentElementType.enum.ts" t="Include" />
+                  <e p="questionType.enum.ts" t="Include" />
                   <e p="storage.enum.ts" t="Include" />
                   <e p="view.enum.ts" t="Include" />
                 </e>
@@ -1831,6 +1860,7 @@
                 <e p="imagesCollage.model.ts" t="Include" />
                 <e p="missingOption.model.ts" t="Include" />
                 <e p="option.model.ts" t="Include" />
+                <e p="pagedList.model.ts" t="Include" />
                 <e p="question.model.ts" t="Include" />
                 <e p="questionAnswer.model.ts" t="Include" />
                 <e p="questionOptions.model.ts" t="Include" />
@@ -1842,7 +1872,8 @@
                 <e p="youtube-embedded.model.ts" t="Include" />
               </e>
               <e p="services" t="Include">
-                <e p="storage.service.ts" t="Include" />
+                <e p="auth.service.ts" t="Include" />
+                <e p="file.service.ts" t="Include" />
                 <e p="user.service.ts" t="Include" />
               </e>
             </e>
@@ -1855,10 +1886,13 @@
                 <e p="ru.json" t="Include" />
               </e>
               <e p="images" t="Include">
+                <e p="1.svg" t="Include" />
                 <e p="audio.svg" t="Include" />
                 <e p="close.svg" t="Include" />
                 <e p="dropbox.svg" t="Include" />
                 <e p="empty.svg" t="Include" />
+                <e p="facebook-white.svg" t="Include" />
+                <e p="facebook.svg" t="Include" />
                 <e p="fill-missing.svg" t="Include" />
                 <e p="flags" t="Include">
                   <e p="de.svg" t="Include" />
@@ -1868,6 +1902,7 @@
                   <e p="ua.svg" t="Include" />
                 </e>
                 <e p="google-drive.svg" t="Include" />
+                <e p="google-white.svg" t="Include" />
                 <e p="google.svg" t="Include" />
                 <e p="heading.svg" t="Include" />
                 <e p="microsoft.svg" t="Include" />
@@ -1879,6 +1914,8 @@
                 <e p="star-border.svg" t="Include" />
                 <e p="star-filled.svg" t="Include" />
                 <e p="text.svg" t="Include" />
+                <e p="twitter-white.svg" t="Include" />
+                <e p="twitter.svg" t="Include" />
                 <e p="youtube.svg" t="Include" />
               </e>
             </e>
@@ -1990,9 +2027,17 @@
         <e p="Requests" t="Include">
           <e p="Files" t="Include">
             <e p="Commands" t="Include">
+              <e p="DeleteFile" t="Include">
+                <e p="DeleteFileCommand.cs" t="Include" />
+                <e p="DeleteFileCommandHandler.cs" t="Include" />
+              </e>
               <e p="SaveFile" t="Include">
                 <e p="SaveFileCommand.cs" t="Include" />
                 <e p="SaveFileCommandHandler.cs" t="Include" />
+              </e>
+              <e p="ToggleFilePin" t="Include">
+                <e p="ToggleFilePinCommand.cs" t="Include" />
+                <e p="ToggleFilePinCommandHandler.cs" t="Include" />
               </e>
             </e>
             <e p="Queries" t="Include">
@@ -2003,6 +2048,10 @@
               <e p="GetFile" t="Include">
                 <e p="GetFileQuery.cs" t="Include" />
                 <e p="GetFileQueryHandler.cs" t="Include" />
+              </e>
+              <e p="GetUserFiles" t="Include">
+                <e p="GetUserFilesQuery.cs" t="Include" />
+                <e p="GetUserFilesQueryHandler.cs" t="Include" />
               </e>
               <e p="OpenFile" t="Include">
                 <e p="OpenFileQuery.cs" t="Include" />
@@ -2069,6 +2118,25 @@
           <e p="StringUtilities.cs" t="Include" />
         </e>
       </e>
+      <e p="Filps.Database" t="IncludeRecursive">
+        <e p="file" t="Include">
+          <e p="Stored Procedures" t="Include">
+            <e p="procDeleteFile.sql" t="Include" />
+            <e p="procGetFileById.sql" t="Include" />
+            <e p="procGetUserFiles.sql" t="Include" />
+            <e p="procSaveFile.sql" t="Include" />
+            <e p="procToggleFilePin.sql" t="Include" />
+          </e>
+          <e p="Tables" t="Include">
+            <e p="File.sql" t="Include" />
+          </e>
+        </e>
+        <e p="Filps.Database.sqlproj" t="IncludeRecursive" />
+        <e p="Properties" t="Include" />
+        <e p="Security" t="Include">
+          <e p="File.sql" t="Include" />
+        </e>
+      </e>
       <e p="Filps.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Configurations" t="Include">
@@ -2080,12 +2148,28 @@
         <e p="Enums" t="Include">
           <e p="Storage.cs" t="Include" />
         </e>
+        <e p="extensions" t="Include">
+          <e p="SqlParametersExtension.cs" t="Include" />
+        </e>
         <e p="Filps.Domain.csproj" t="IncludeRecursive" />
+        <e p="Helpers" t="Include">
+          <e p="Attributes" t="Include">
+            <e p="QueryParamIgnoreAttribute.cs" t="Include" />
+            <e p="QueryParamNameAttribute.cs" t="Include" />
+          </e>
+          <e p="Converters" t="Include">
+            <e p="TypeConvertor.cs" t="Include" />
+          </e>
+        </e>
         <e p="Models" t="Include">
           <e p="Files" t="Include">
             <e p="File.cs" t="Include" />
             <e p="FileData.cs" t="Include" />
             <e p="FileMetadata.cs" t="Include" />
+            <e p="GetFilesFilters.cs" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="PagedList.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">

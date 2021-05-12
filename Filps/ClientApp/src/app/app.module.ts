@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
@@ -18,7 +17,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-
+import { NzTagModule } from 'ng-zorro-antd/tag';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FolderComponent } from './components/folder/folder.component';
@@ -56,7 +55,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { FileLocationPickerModalComponent } from './components/file-location-picker-modal/file-location-picker-modal.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
-
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import {SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider} from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { MomentModule } from 'ngx-moment';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { DocumentRecordComponent } from './components/document-record/document-record.component';
+import {AuthTokenInterceptor} from './interceptors/authToken.interceptor';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import {NgxFileDropModule} from 'ngx-file-drop';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 registerLocaleData(en);
 
 @NgModule({
@@ -85,7 +94,8 @@ registerLocaleData(en);
     HeaderComponent,
     ContentComponent,
     FileLocationPickerModalComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    DocumentRecordComponent
   ],
     imports: [
         BrowserModule,
@@ -119,21 +129,51 @@ registerLocaleData(en);
             }
         }),
         QuillModule.forRoot({
-          modules: {
-            toolbar: [
-              ['bold', 'italic', 'underline'],
-              ['blockquote'],
-              [{list: 'ordered'}, {list: 'bullet'}, {align: []}],
-              [{header: [1, 2, 3, 4, 5, 6, false]}],
-              [{color: []}, {background: []}],
-              ['clean']
-            ]
-          }
+            modules: {
+                toolbar: [
+                    ['bold', 'italic', 'underline'],
+                    ['blockquote'],
+                    [{list: 'ordered'}, {list: 'bullet'}, {align: []}],
+                    [{header: [1, 2, 3, 4, 5, 6, false]}],
+                    [{color: []}, {background: []}],
+                    ['clean']
+                ]
+            }
         }),
         ReactiveFormsModule,
-        NgxAudioPlayerModule
+        NgxAudioPlayerModule,
+        SocialLoginModule,
+        NzAvatarModule,
+        NzPaginationModule,
+        MomentModule,
+        NzTagModule,
+        NzButtonModule,
+        NzDividerModule,
+        NgxFileDropModule,
+        NzDatePickerModule,
+
     ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },
+    { provide: NZ_I18N, useValue: en_US },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: true,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '821014846315-qkpfbrbhitqa8m6bn39kbe0ujfllkuvs.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('4287975794607036')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

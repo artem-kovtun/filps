@@ -1,0 +1,45 @@
+<div #document document>
+  <div flex document-name>
+    <i file-icon nz-icon nzType="file" nzTheme="outline"></i>
+    <span (click)="onFileClick(file.id)">{{file.name}}</span>
+  </div>
+  <div flex>
+    <div *ngIf="allowPin" flex document-actions>
+      <i
+         #optionsButton
+         nz-dropdown
+         nzTrigger="click"
+         [nzDropdownMenu]="menu"
+         icon-button
+         nz-icon
+         nzType="ellipsis"
+         nzTheme="outline"
+         [nzTooltipTitle]="'options' | translate"
+         nzTooltipPlacement="bottom"
+         nz-tooltip
+         [nzTooltipMouseEnterDelay]="1"
+         (nzVisibleChange)="optionDropdownVisibleChange($event)"
+      ></i>
+      <button (click)="onFilePinToggle(file.id)" *ngIf="file.isPinned" class="explicitly-visible-button" icon-button [nzTooltipTitle]="'unpin' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1">
+        <img src="./assets/images/star-filled.svg" alt="">
+      </button>
+      <button #unpinButton (click)="onFilePinToggle(file.id)" *ngIf="!file.isPinned" icon-button [nzTooltipTitle]="'pin' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1">
+        <img src="./assets/images/star-border.svg" alt="">
+      </button>
+    </div>
+    <span *ngIf="displayDate" last-modified-date no-select>{{file.accessedOn | amTimeAgo}}</span>
+  </div>
+</div>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li (click)="onFileDelete(file.id)" nz-menu-item menu-button button-danger>
+      <i button-icon nz-icon nzType="delete" nzTheme="outline"></i>
+      <span>{{'delete' | translate}}</span>
+    </li>
+    <li (click)="onFileDownload(file.id)" nz-menu-item menu-button>
+      <i button-icon nz-icon nzType="download" nzTheme="outline"></i>
+      <span>{{'download' | translate}}</span>
+    </li>
+  </ul>
+</nz-dropdown-menu>

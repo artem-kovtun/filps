@@ -20,65 +20,123 @@
       </ul>
     </nz-dropdown-menu>
 
-    <button header-button>
-      <span no-select>{{'login' | translate}}</span>
+    <button nz-dropdown [nzDropdownMenu]="userMenu" nzPlacement="bottomRight" nzTrigger="click" *ngIf="this.isAuthorized" header-button>
+      <nz-avatar nzIcon="user" [nzSrc]="this.user.photoUrl"></nz-avatar>
     </button>
+
+    <nz-dropdown-menu #userMenu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>
+          <i nz-icon nzType="user" nzTheme="outline"></i>
+          <span>{{'profile' | translate}}</span>
+        </li>
+        <li (click)="logOut()" nz-menu-item button-danger>
+          <i nz-icon nzType="logout" nzTheme="outline"></i>
+          <span>{{'logout' | translate}}</span>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
 
   </div>
 </app-header>
 
-<app-content>
-  <div content>
-    <div actions>
-      <button (click)="createNewBlankDocument()" primary-button>
-        <i button-icon nz-icon nzType="plus" nzTheme="outline"></i>
-        <span class="no-select">{{'newBlankDocument' | translate}}</span>
-      </button>
-      <button secondary-button button-text-primary>
-        <i button-icon nz-icon nzType="file" nzTheme="outline"></i>
-        <span class="no-select">{{'openExisting' | translate}}</span>
-      </button>
-    </div>
+<ngx-file-drop
+  dropZoneLabel="Drop files here"
+  (onFileDrop)="dropped($event)">
+  <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+    <app-content content-container>
+      <div content>
+        <div actions>
+          <button (click)="createNewBlankDocument()" primary-button>
+            <i button-icon nz-icon nzType="plus" nzTheme="outline"></i>
+            <span button-text class="no-select">{{'newBlankDocument' | translate}}</span>
+            <span mobile-button-text class="no-select">{{'newBlankDocumentMobile' | translate}}</span>
+          </button>
+          <button secondary-button button-text-primary (click)="fileSelector.click()">
+            <i button-icon nz-icon nzType="file" nzTheme="outline"></i>
+            <span button-text class="no-select">{{'openExisting' | translate}}</span>
+            <span mobile-button-text class="no-select">{{'openExistingMobile' | translate}}</span>
+            <input #fileSelector class="filesSelector" type="file" style="display:none" (change)="openFile($event.target.files[0])">
+          </button>
+        </div>
 
 
-    <nz-tabset *ngIf="isDataLoaded" tabs [(nzSelectedIndex)]="tab" (nzSelectedIndexChange)="tabSelected($event)">
+        <nz-tabset *ngIf="isDataLoaded" tabs [(nzSelectedIndex)]="tab" (nzSelectedIndexChange)="tabSelected($event)">
 
-      <nz-tab [nzTitle]="Files">
-        <app-documents documents [files]="files" [allowPin]="true" [displayDate]="true"></app-documents>
-      </nz-tab>
+          <nz-tab [nzTitle]="Files">
 
-      <nz-tab [nzTitle]="GoogleDrive">
-        <app-storage *ngIf="isLoaded(Storage.GoogleDrive)" [storage]="Storage.GoogleDrive" [isAuthorized]="isAuthorized(Storage.GoogleDrive)"></app-storage>
-      </nz-tab>
+            <div *ngIf="isAuthorized" flex-column>
+              <app-documents
+                documents
+                [files]="filesPagedList.items"
+                [allowPin]="true"
+                [displayDate]="true"
+                (fileClicked)="selectFile($event)"
+                (filePinToggle)="filePinToggle($event)"
+                (fileDelete)="deleteFile($event)"
+                (fileDownload)="downloadFile($event)"
+              ></app-documents>
+              <div *ngIf="isFilesPaginationDisplayed()" pagination-container>
+                <nz-pagination [nzPageIndex]="getFilesQuery.page" [nzTotal]="filesPagedList.total" (nzPageIndexChange)="pageChanged($event)"></nz-pagination>
+              </div>
+            </div>
 
-      <nz-tab [nzTitle]="OneDrive">
-        <app-storage *ngIf="isLoaded(Storage.OneDrive)" [storage]="Storage.OneDrive" [isAuthorized]="isAuthorized(Storage.OneDrive)"></app-storage>
-      </nz-tab>
+            <div *ngIf="!isAuthorized" unauthorized-container>
+              <span no-select label>Login</span>
+              <span no-select sublabel>in order to get access to your files</span>
+              <div login-buttons>
+                <button (click)="loginWithGoogle()" primary-button login-button google-login-button>
+                  <img login-button-icon src="./assets/images/google-white.svg" alt="">
+                  <span>Google</span>
+                </button>
+                <button (click)="loginWithFacebook()" primary-button login-button facebook-login-button>
+                  <img login-button-icon src="./assets/images/facebook-white.svg" alt="">
+                  <span>Facebook</span>
+                </button>
+              </div>
+            </div>
 
-      <nz-tab [nzTitle]="Dropbox">
-        <app-storage *ngIf="isLoaded(Storage.Dropbox)" [storage]="Storage.Dropbox" [isAuthorized]="isAuthorized(Storage.Dropbox)"></app-storage>
-      </nz-tab>
 
-    </nz-tabset>
+          </nz-tab>
 
-    <ng-template #Files>
-      <span>{{'recent' | translate}}</span>
-    </ng-template>
+          <!--
 
-    <ng-template #GoogleDrive>
-      <img tab-image src="./assets/images/google-drive.svg" alt="">
-      <span>Google Drive</span>
-    </ng-template>
+          <nz-tab [nzTitle]="GoogleDrive">
+            <app-storage *ngIf="isLoaded(Storage.GoogleDrive)" [storage]="Storage.GoogleDrive" [isAuthorized]="isStorageAuthorized(Storage.GoogleDrive)"></app-storage>
+          </nz-tab>
 
-    <ng-template #OneDrive>
-      <img tab-image src="./assets/images/onedrive.svg" alt="">
-      <span>One Drive</span>
-    </ng-template>
 
-    <ng-template #Dropbox>
-      <img tab-image src="./assets/images/dropbox.svg" alt="">
-      <span>Dropbox</span>
-    </ng-template>
+          <nz-tab [nzTitle]="OneDrive">
+            <app-storage *ngIf="isLoaded(Storage.OneDrive)" [storage]="Storage.OneDrive" [isAuthorized]="isStorageAuthorized(Storage.OneDrive)"></app-storage>
+          </nz-tab>
 
-  </div>
-</app-content>
+          <nz-tab [nzTitle]="Dropbox">
+            <app-storage *ngIf="isLoaded(Storage.Dropbox)" [storage]="Storage.Dropbox" [isAuthorized]="isStorageAuthorized(Storage.Dropbox)"></app-storage>
+          </nz-tab>
+          -->
+
+        </nz-tabset>
+
+        <ng-template #Files>
+          <span>{{'files' | translate}}</span>
+        </ng-template>
+
+        <ng-template #GoogleDrive>
+          <img tab-image src="./assets/images/google-drive.svg" alt="">
+          <span>Google Drive</span>
+        </ng-template>
+
+        <ng-template #OneDrive>
+          <img tab-image src="./assets/images/onedrive.svg" alt="">
+          <span>One Drive</span>
+        </ng-template>
+
+        <ng-template #Dropbox>
+          <img tab-image src="./assets/images/dropbox.svg" alt="">
+          <span>Dropbox</span>
+        </ng-template>
+
+      </div>
+    </app-content>
+  </ng-template>
+</ngx-file-drop>

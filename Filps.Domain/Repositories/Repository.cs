@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using Filps.Domain.Configurations;
+using Filps.Domain.Extensions;
+using Microsoft.Azure.Services.AppAuthentication;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Npgsql;
@@ -17,29 +21,68 @@ namespace Filps.Domain.Repositories
         {
             ConnectionString = databaseConfiguration.Value.ConnectionString;
         }
+        
+        private SqlConnection GetSqlConnection()
+        {
+            return new SqlConnection(ConnectionString);
+        }
 
-        protected Task<IEnumerable<T>> QueryAsync<T>(string functionName, object parameters)
+        public async Task<T> ExecuteScalarProcedure<T>(string procedureName, object parameters = null)
         {
-            using var db = new NpgsqlConnection(ConnectionString);
-            return db.QueryAsync<T>(functionName, parameters, commandType: CommandType.StoredProcedure);
+            await using var connection = GetSqlConnection();
+            await using var command = new SqlCommand(procedureName, connection);
+            
+            if (parameters != null) 
+                command.Parameters.AddRange(parameters.ToSqlParamsArray());
+            
+            command.CommandType = CommandType.StoredProcedure;
+            
+            await connection.OpenAsync();
+            
+            var result = await command.ExecuteScalarAsync();
+            
+            return result is T typedResult ? typedResult : default;
         }
         
-        protected async Task<T> QueryFirstOrDefaultAsync<T>(string functionName, object parameters)
+        public async Task ExecuteNonQueryProcedure(string procedureName, object parameters = null)
         {
-            await using var db = new NpgsqlConnection(ConnectionString);
-            return await db.QueryFirstOrDefaultAsync<T>(functionName, parameters, commandType: CommandType.StoredProcedure);
+            await using var connection = GetSqlConnection();
+            await using var command = new SqlCommand(procedureName, connection);
+            
+            if (parameters != null)
+                command.Parameters.AddRange(parameters.ToSqlParamsArray());
+            
+            command.CommandType = CommandType.StoredProcedure;
+            
+            await connection.OpenAsync();
+
+            await command.ExecuteNonQueryAsync();
         }
         
-        protected Task ExecuteAsync(string functionName, object parameters)
+        public async Task<string> ExecuteJsonQueryAsync(string query, object parameters, CommandType commandType)
         {
-            using var db = new NpgsqlConnection(ConnectionString);
-            return db.ExecuteAsync(functionName, parameters, commandType: CommandType.StoredProcedure);
+            var res = new StringBuilder();
+            
+            await using var connection = GetSqlConnection();
+            await using var command = new SqlCommand(query, connection) {CommandType = commandType};
+            
+            if (parameters != null) command.Parameters.AddRange(parameters.ToSqlParamsArray());
+                
+            await connection.OpenAsync();
+            
+            var reader = await command.ExecuteReaderAsync();
+            
+            while (reader.Read())
+            {
+                res.Append(reader.GetString(0));
+            }
+            
+            return res.ToString();
         }
         
-        protected async Task<T> QueryJsonAsync<T>(string functionName, object parameters)
+        public async Task<T> ExecuteJsonResultProcedureAsync<T>(string query, object sqlParams = null)
         {
-            await using var db = new NpgsqlConnection(ConnectionString);
-            var json = await db.QueryFirstOrDefaultAsync<string>(functionName, parameters, commandType: CommandType.StoredProcedure);
+            var json = await ExecuteJsonQueryAsync(query, sqlParams, CommandType.StoredProcedure);
             return JsonConvert.DeserializeObject<T>(json);
         }
 

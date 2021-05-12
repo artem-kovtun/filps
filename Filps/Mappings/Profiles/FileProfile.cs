@@ -2,6 +2,7 @@
 using Filps.Application.Requests.Files.Commands.SaveFile;
 using Filps.Application.Requests.Files.Queries.DownloadFile;
 using Filps.Application.Requests.Files.Queries.GetFile;
+using Filps.Application.Requests.Files.Queries.GetUserFiles;
 using Filps.Application.Requests.Files.Queries.OpenFile;
 using Filps.Application.Requests.GoogleDrive.Queries.DownloadFile;
 using Filps.Application.Requests.GoogleDrive.Queries.GetFiles;
@@ -22,6 +23,7 @@ namespace Filps.Mappings.Profiles
             CreateMap<SaveFileInput, SaveFileCommand>();
             CreateMap<GetFileInput, GetFileQuery>();
             CreateMap<GetFileInput, DownloadFileQuery>();
+            CreateMap<GetFilesInput, GetUserFilesQuery>();
         }
     }
 }

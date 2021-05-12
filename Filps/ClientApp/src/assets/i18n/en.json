@@ -1,7 +1,10 @@
 {
   "newBlankDocument": "New blank document",
+  "newBlankDocumentMobile": "New document",
   "openExisting": "Open existing document",
+  "openExistingMobile": "Open",
   "recent": "Recent",
+  "files": "Files",
   "login": "Login",
   "back": "Back",
   "pin": "Pin",
@@ -13,6 +16,7 @@
   "transfer": "Transfer",
   "sync": "Sync",
   "syncing": "Syncing",
+  "profile": "Profile",
   "logout": "Log out",
   "addAfterCurrent": "Add after",
   "copy": "Copy",

@@ -2,13 +2,11 @@
 {
     public class UserRequest
     {
-        public UserRequest(string sessionId, string email)
+        public UserRequest(string email)
         {
-            SessionId = sessionId;
             Email = email;
         }
         
-        public string SessionId { get; set; }
         public string Email { get; set; }
     }
 }

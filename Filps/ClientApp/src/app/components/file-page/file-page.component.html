@@ -3,31 +3,33 @@
   <div flex>
     <i *ngIf="fileView == View.Read" (click)="closeDocument()" icon-button back-button [nzTooltipTitle]="'back' | translate" nzTooltipPlacement="bottom" nz-tooltip [nzTooltipMouseEnterDelay]="1" nz-icon nzType="arrow-left" nzTheme="outline"></i>
     <span logo no-select>FILPS</span>
-    <div *ngIf="file.name != null" nz-dropdown nzTrigger="click" [nzDropdownMenu]="filenameMenu" (nzVisibleChange)="visibleChange($event)" filename-button header-button>
-      <svg *ngIf="this.drive.storage === Storage.GoogleDrive" filename-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M113.47 309.408L95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z" fill="#fbbb00"/><path d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z" fill="#518ef8"/><path d="M416.253 455.624l.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z" fill="#28b446"/><path d="M419.404 58.936l-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.411-68.276C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z" fill="#f14336"/></svg>
-      <svg *ngIf="this.drive.storage === Storage.OneDrive" filename-icon xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#4CAF50;" d="M272,240h240V16c0-8.832-7.168-16-16-16H272V240z"/><path style="fill:#F44336;" d="M240,240V0H16C7.168,0,0,7.168,0,16v224H240z"/><path style="fill:#2196f3;" d="M240,272H0v224c0,8.832,7.168,16,16,16h224V272z"/><path style="fill:#FFC107;" d="M272,272v240h224c8.832,0,16-7.168,16-16V272H272z"/></svg>
-      <svg *ngIf="this.drive.storage === Storage.Dropbox" filename-icon enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><g fill="#1976d2"><path d="m11.999 4.483 7.119 4.246 4.882-3.775-7.061-4.454z"/><path d="m12 4.485-4.94-3.985-7.06 4.453 4.883 3.777z"/><path d="m12 12.976 4.939 3.983 7.061-4.453-4.883-3.777-7.117 4.246-7.119-4.246-4.881 3.777 7.06 4.453z"/><path d="m19.501 19.187v-2.125l-2.204 1.39v.001c-.828.527-1.205-.536-5.296-3.602-4.161 3.128-4.473 4.12-5.298 3.601l-2.202-1.389v2.124l7.515 4.313z"/></g></svg>
+    <div *ngIf="!this.isFirstTimeCreate" nz-dropdown nzTrigger="click" [nzDropdownMenu]="filenameMenu" (nzVisibleChange)="visibleChange($event)" filename-button header-button>
       <span no-select>{{file.name}}</span>
     </div>
+    <nz-tag *ngIf="!isFirstTimeCreate && this.file.id == null" no-select modified-tag [nzColor]="'red'">Unsaved</nz-tag>
     <nz-dropdown-menu #filenameMenu="nzDropdownMenu">
       <div file-metadata-container>
         <span metadata-label>Filename</span>
         <input file-name-input id="filename" type="text" [(ngModel)]="filenameEdit">
-        <span metadata-label>Location</span>
-        <div *ngIf="file.source == null" select-location-button>
+
+        <!--
+                <span metadata-label>Location</span>
+        <div *ngIf="file.storage == null" select-location-button>
           <span no-select>Select location</span>
         </div>
 
-        <div *ngIf="file.source != null" flex file-location>
+        <div *ngIf="file.storage != null" flex file-location>
           <div flex>
-            <svg *ngIf="this.drive.storage === Storage.GoogleDrive" storage-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M113.47 309.408L95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z" fill="#fbbb00"/><path d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z" fill="#518ef8"/><path d="M416.253 455.624l.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z" fill="#28b446"/><path d="M419.404 58.936l-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.411-68.276C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z" fill="#f14336"/></svg>
-            <svg *ngIf="this.drive.storage === Storage.OneDrive" storage-icon xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#4CAF50;" d="M272,240h240V16c0-8.832-7.168-16-16-16H272V240z"/><path style="fill:#F44336;" d="M240,240V0H16C7.168,0,0,7.168,0,16v224H240z"/><path style="fill:#2196f3;" d="M240,272H0v224c0,8.832,7.168,16,16,16h224V272z"/><path style="fill:#FFC107;" d="M272,272v240h224c8.832,0,16-7.168,16-16V272H272z"/></svg>
-            <svg *ngIf="this.drive.storage === Storage.Dropbox" storage-icon enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><g fill="#1976d2"><path d="m11.999 4.483 7.119 4.246 4.882-3.775-7.061-4.454z"/><path d="m12 4.485-4.94-3.985-7.06 4.453 4.883 3.777z"/><path d="m12 12.976 4.939 3.983 7.061-4.453-4.883-3.777-7.117 4.246-7.119-4.246-4.881 3.777 7.06 4.453z"/><path d="m19.501 19.187v-2.125l-2.204 1.39v.001c-.828.527-1.205-.536-5.296-3.602-4.161 3.128-4.473 4.12-5.298 3.601l-2.202-1.389v2.124l7.515 4.313z"/></g></svg>
+            <svg *ngIf="this.file.storage === Storage.GoogleDrive" storage-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M113.47 309.408L95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z" fill="#fbbb00"/><path d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z" fill="#518ef8"/><path d="M416.253 455.624l.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z" fill="#28b446"/><path d="M419.404 58.936l-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.411-68.276C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z" fill="#f14336"/></svg>
+            <svg *ngIf="this.file.storage === Storage.OneDrive" storage-icon xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#4CAF50;" d="M272,240h240V16c0-8.832-7.168-16-16-16H272V240z"/><path style="fill:#F44336;" d="M240,240V0H16C7.168,0,0,7.168,0,16v224H240z"/><path style="fill:#2196f3;" d="M240,272H0v224c0,8.832,7.168,16,16,16h224V272z"/><path style="fill:#FFC107;" d="M272,272v240h224c8.832,0,16-7.168,16-16V272H272z"/></svg>
+            <svg *ngIf="this.file.storage === Storage.Dropbox" storage-icon enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><g fill="#1976d2"><path d="m11.999 4.483 7.119 4.246 4.882-3.775-7.061-4.454z"/><path d="m12 4.485-4.94-3.985-7.06 4.453 4.883 3.777z"/><path d="m12 12.976 4.939 3.983 7.061-4.453-4.883-3.777-7.117 4.246-7.119-4.246-4.881 3.777 7.06 4.453z"/><path d="m19.501 19.187v-2.125l-2.204 1.39v.001c-.828.527-1.205-.536-5.296-3.602-4.161 3.128-4.473 4.12-5.298 3.601l-2.202-1.389v2.124l7.515 4.313z"/></g></svg>
 
-            <span storage-name>{{this.drive.provider}}</span>
+            <span storage-name>{{this.drivesNames[this.file.storage]}}</span>
           </div>
           <span file-path>/Files/Personal</span>
         </div>
+        -->
+
       </div>
     </nz-dropdown-menu>
   </div>
@@ -35,40 +37,53 @@
   <div *ngIf="fileView == View.Read" flex>
 
     <div flex file-actions>
-      <i
-        hover-button
+      <button
+        *ngIf="isSaveButtonHighlighted()"
+        (click)="save()"
         icon-button
-        nz-icon
-        nzType="save"
-        nzTheme="outline"
         [nzTooltipTitle]="'save' | translate"
         nzTooltipPlacement="bottom"
         nz-tooltip
-        [nzTooltipMouseEnterDelay]="1"
-      ></i>
-      <i
-        (click)="onFileEdit()"
-        hover-button
+        [nzTooltipMouseEnterDelay]="1">
+        <nz-badge [nzDot]="true">
+          <i
+            nz-icon
+            nzType="save"
+            nzTheme="outline"></i>
+        </nz-badge>
+      </button>
+
+      <button
+        *ngIf="!isSaveButtonHighlighted()"
+        (click)="save()"
         icon-button
-        nz-icon
-        nzType="edit"
-        nzTheme="outline"
+        [nzTooltipTitle]="'save' | translate"
+        nzTooltipPlacement="bottom"
+        nz-tooltip
+        [nzTooltipMouseEnterDelay]="1">
+          <i nz-icon nzType="save" nzTheme="outline"></i>
+      </button>
+
+      <button
+        (click)="onFileEdit()"
+        icon-button
         [nzTooltipTitle]="'edit' | translate"
         nzTooltipPlacement="bottom"
         nz-tooltip
-        [nzTooltipMouseEnterDelay]="1"
-      ></i>
-      <i
-        hover-button
+        [nzTooltipMouseEnterDelay]="1">
+        <i nz-icon nzType="edit" nzTheme="outline"></i>
+      </button>
+
+      <button
+        (click)="download()"
         icon-button
-        nz-icon
-        nzType="download"
-        nzTheme="outline"
         [nzTooltipTitle]="'download' | translate"
         nzTooltipPlacement="bottom"
         nz-tooltip
-        [nzTooltipMouseEnterDelay]="1"
-      ></i>
+        [nzTooltipMouseEnterDelay]="1">
+        <i nz-icon nzType="download" nzTheme="outline"></i>
+      </button>
+
     </div>
 
   </div>
@@ -79,7 +94,7 @@
         <i button-icon nz-icon nzType="close" nzTheme="outline" ></i>
         <span>{{ 'cancel' | translate}}</span>
       </button>
-      <button (click)="saveEdit()" primary-button>
+      <button (click)="save()" primary-button>
         <i button-icon nz-icon nzType="check" nzTheme="outline" ></i>
         <span>{{ 'save' | translate}}</span>
       </button>
@@ -88,8 +103,8 @@
   </div>
 </app-header>
 
-<app-content>
+<app-content content-container>
   <div content>
-    <app-file [view]="fileView" [fileContent]="fileContent"></app-file>
+    <app-file [view]="fileView" [(fileContent)]="fileContent" (fileContentChange)="onFileChange($event)"></app-file>
   </div>
 </app-content>

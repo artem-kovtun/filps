@@ -1,5 +1,10 @@
 <div *ngIf="view == View.Read" container>
-  <span question>{{questionOptions.text}}</span>
+  <div flex question-header>
+    <span question>{{questionOptions.text}}</span>
+    <button *ngIf="isClearSelectionButtonVisible()" (click)="clearSelection()" clear-selection-button secondary-button>
+      <span>Clear selection</span>
+    </button>
+  </div>
   <div *ngIf="questionOptions.isMultipleCorrect; then multipleCorrectOptions else singleCorrectOption"></div>
 </div>
 

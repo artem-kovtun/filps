@@ -22,9 +22,12 @@ using Filps.Security.Engines;
 using Filps.Security.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace Filps
@@ -60,20 +63,18 @@ namespace Filps
             
             services.AddControllers();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie()
-                .AddGoogle(options =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
-                    options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                    options.ClientId = "759758100252-jdqv2p65fa3n2k9tdpargn72lcoe5id2.apps.googleusercontent.com";
-                    options.ClientSecret = "qup54dbuAitag4H5dZhvN1tg";
-                    options.Scope.Add("profile");
-                    options.Scope.Add("https://www.googleapis.com/auth/drive");
-                    options.SaveTokens = true;
-                    options.Events.OnCreatingTicket = context =>
+                    options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        context.Identity.AddClaim(new Claim("image", context.User.GetProperty("picture").ToString()!));
-                        return Task.CompletedTask;
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        
+                        ValidIssuer = "accounts.google.com",
+                        ValidAudience = "821014846315-qkpfbrbhitqa8m6bn39kbe0ujfllkuvs.apps.googleusercontent.com"
                     };
                 });
 

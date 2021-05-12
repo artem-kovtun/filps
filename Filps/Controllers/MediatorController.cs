@@ -12,7 +12,7 @@ namespace Filps.Controllers
         private IMediator _mediator;
         private IMapper _mapper;
 
-        protected string Email => HttpContext.User.FindFirstValue(ClaimTypes.Email);
+        protected string Email => HttpContext.Items["Email"]?.ToString();
         protected ISession Session => HttpContext.Session;
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
         protected IMapper Mapper => _mapper ??= HttpContext.RequestServices.GetService<IMapper>();

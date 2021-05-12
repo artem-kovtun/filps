@@ -1,5 +1,5 @@
 [language-container] {
-  margin-right: 25px;
+  margin-right: 15px;
   cursor: pointer;
 }
 
@@ -33,14 +33,19 @@
   background-color: transparent;
   border: none;
   color: #003d9e;
-  padding: 15px;
   font-weight: bolder;
   cursor: pointer;
+  height: 49px;
+  padding: 0 10px;
 }
 
 [header-button]:hover {
   background-color: #f6f6f6;
   font-weight: bold;
+}
+
+[content-container] {
+  width: 100%;
 }
 
 [content] {
@@ -64,6 +69,10 @@
   margin-right: 0;
 }
 
+[mobile-button-text] {
+  display: none;
+}
+
 [tab-image] {
   width: 15px;
   height: 15px;
@@ -74,3 +83,105 @@
 [tabs] {
   margin-top: 15px;
 }
+
+[pagination-container] {
+  display: flex;
+  margin: 25px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+
+[unauthorized-container] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+[unauthorized-container] [label] {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+[unauthorized-container] [sublabel] {
+  font-size: 10px;
+  font-weight: bold;
+  color: silver;
+  margin-top: 10px;
+}
+
+[login-buttons] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+[login-button] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  padding: 7px 45px;
+}
+
+[login-button] span {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+[login-button-icon] {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+[google-login-button] {
+  background-color: #dd4b39;
+}
+
+[google-login-button]:hover {
+  background-color: darken(#dd4b39, 10) ;
+}
+
+[facebook-login-button] {
+  background-color: #3b5998;
+}
+
+[facebook-login-button]:hover {
+  background-color: darken(#3b5998, 10) ;
+}
+
+
+[twitter-login-button] {
+  background-color: #03A9F4;
+}
+
+[twitter-login-button]:hover {
+  background-color: darken(#03A9F4, 10) ;
+}
+
+
+[nz-menu-item] {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 950px) {
+
+  [content] {
+    width: 100%;
+  }
+
+  [button-text] {
+    display: none;
+  }
+
+  [mobile-button-text] {
+    display: block;
+  }
+}
+

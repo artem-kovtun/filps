@@ -5,5 +5,5 @@ export class FileMetadata {
   id: string;
   name: string;
   isPinned: boolean;
-  createdOn: Date;
+  accessedOn: Date;
 }

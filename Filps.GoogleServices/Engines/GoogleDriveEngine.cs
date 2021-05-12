@@ -14,7 +14,7 @@ namespace Filps.GoogleServices.Engines
     {
         private const string GoogleDriveFolderMimeType = "application/vnd.google-apps.folder";
         
-        public async Task<StorageContent> GetMyDriveContentAsync(UserCredential credential, StorageFilters filters)
+        public async Task<StorageContent> GetMyDriveContentAsync(GoogleCredential credential, StorageFilters filters)
         {
             var baseQuery = $"'me' in owners and trashed = false and '{filters.ParentId ?? "root"}' in parents and name contains '{filters.Search}'";
             var service = DriveService(credential);
@@ -41,7 +41,7 @@ namespace Filps.GoogleServices.Engines
             return response;
         }
 
-        public async Task<FileContent> DownloadFileAsync(UserCredential credential, string id)
+        public async Task<FileContent> DownloadFileAsync(GoogleCredential credential, string id)
         {
             var service = DriveService(credential);
             

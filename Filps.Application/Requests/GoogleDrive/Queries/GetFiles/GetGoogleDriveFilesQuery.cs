@@ -7,9 +7,7 @@ namespace Filps.Application.Requests.GoogleDrive.Queries.GetFiles
 {
     public class GetGoogleDriveFilesQuery: UserRequest, IRequest<GetFilesResponse>
     {
-        public GetGoogleDriveFilesQuery(string sessionId, string email) : base(sessionId, email) { }
-        
-        public Storage Storage { get; set; }
+        public GetGoogleDriveFilesQuery(string email) : base( email) { }
         public string ParentId { get; set; }
         public string Search { get; set; }
     }

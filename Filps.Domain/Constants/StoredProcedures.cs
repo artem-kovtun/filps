@@ -2,8 +2,10 @@
 {
     public static class StoredProcedures
     {
-        public const string AddFile = "add_file";
-        public const string GetFile = "get_file";
-        public const string GetUserFiles = "get_user_files";
+        public const string SaveFile = "file.procSaveFile";
+        public const string GetFile = "file.procGetFileById";
+        public const string GetFiles = "file.procGetUserFiles";
+        public const string ToggleFilePin = "file.procToggleFilePin";
+        public const string DeleteFile = "file.procDeleteFile";
     }
 }

@@ -5,6 +5,7 @@ using Filps.Application.Factories.Contracts;
 using Filps.Common.Extensions;
 using Filps.Domain.Models.Files;
 using Filps.GoogleServices.Contacts;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using MediatR;
 
@@ -27,9 +28,8 @@ namespace Filps.Application.Requests.GoogleDrive.Queries.DownloadFile
         
         public async Task<FileData> Handle(DownloadGoogleDriveFileQuery request, CancellationToken cancellationToken)
         {
-            var credential = await _googleCredentialEngine.GetCredentialAsync(Scopes,
-                $"{request.Email ?? request.SessionId}//Google", cancellationToken, _dataStoreFactory.DataStore(request.SessionId, request.Email));
-                
+            var credential = GoogleCredential.FromAccessToken("ya29.a0AfH6SMDgEpkdSA14td6BKEjPv9tCVk0wypR9iRoMjkjj56JxVZOh0ZTIk3spC4I4u8ALiYTAQ3sx_LxbSjcHWjwGGZFOf67NbCmWDJfaDgCbdjoyrlEJTma3ez9Cn82XAisiDCfNiLf3911spXcezoUK84fm");
+            
             var file = await _googleDriveEngine.DownloadFileAsync(credential, request.FileId);
 
             if (file == null) return null;

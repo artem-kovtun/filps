@@ -18,3 +18,28 @@
 [question-icon] {
   margin-right: 5px;
 }
+
+[question-options] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[question-input] {
+  width: 100%;
+}
+
+[question-answer-type-select] {
+  margin-left: 25px;
+}
+
+[answer-option] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+[question-answer-input] {
+  width: 100%;
+}

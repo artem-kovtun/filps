@@ -1,9 +1,20 @@
 <div *ngIf="view == View.Read" container>
-  <span question>{{questionAnswer.text}}</span>
-  <textarea (ngModelChange)="onDataChange()" primary-input [(ngModel)]="questionAnswer.answer" [nzAutosize]="{ minRows: 1, maxRows: 100 }"></textarea>
+  <div answer-option>
+    <span question>{{questionAnswer.text}}</span>
+    <textarea question-answer-input *ngIf="questionAnswer.type == QuestionType.Text" (ngModelChange)="onDataChange()" primary-input [(ngModel)]="questionAnswer.answer" [nzAutosize]="{ minRows: 1, maxRows: 100 }"></textarea>
+    <nz-date-picker *ngIf="questionAnswer.type == QuestionType.Date" (ngModelChange)="onDataChange()" nzSize="small" nzFormat="MMM d, y" [(ngModel)]="questionAnswer.answer"></nz-date-picker>
+    <nz-switch *ngIf="questionAnswer.type == QuestionType.Switch" (ngModelChange)="onDataChange()" nzSize="small" [(ngModel)]="questionAnswer.answer"></nz-switch>
+  </div>
 </div>
 
 <div *ngIf="view == View.Edit" container>
   <span question-label no-select>{{ 'question' | translate}}</span>
-  <input primary-input [(ngModel)]="questionAnswer.text">
+  <div question-options>
+    <input question-input primary-input [(ngModel)]="questionAnswer.text">
+    <nz-select nzSize="small" question-answer-type-select [(ngModel)]="questionAnswer.type">
+      <nz-option [nzValue]="QuestionType.Text" nzLabel="Text"></nz-option>
+      <nz-option [nzValue]="QuestionType.Date" nzLabel="Date"></nz-option>
+      <nz-option [nzValue]="QuestionType.Switch" nzLabel="Switch"></nz-option>
+    </nz-select>
+  </div>
 </div>

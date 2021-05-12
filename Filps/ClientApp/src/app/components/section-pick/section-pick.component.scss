@@ -1,13 +1,18 @@
-[section-pick-button] {
-  cursor: pointer;
+:host {
+  padding: 10px 0;
+  display: block;
+}
+
+[section] {
+  margin-bottom: 5px;
+}
+
+[section]:last-child {
+  margin-bottom: 0;
 }
 
 [section-image] {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   margin-right: 15px;
-}
-
-[section-name]:hover {
-  color: #003d9e;
 }
